@@ -6,26 +6,26 @@
 <style>
   @font-face {
     font-family: "Gelasio";
-    src: url("file:///home/hatch/.fonts/Gelasio-Regular.ttf");
+    src: url("fonts/Gelasio-Regular.ttf");
   }
   @font-face {
     font-family: "Gelasio";
-    src: url("file:///home/hatch/.fonts/Gelasio-Bold.ttf");
+    src: url("fonts/Gelasio-Bold.ttf");
     font-weight: bold;
   }
   @font-face {
     font-family: "Gelasio";
-    src: url("file:///home/hatch/.fonts/Gelasio-Italic.ttf");
+    src: url("fonts/Gelasio-Italic.ttf");
     font-style: italic;
   }
   @font-face {
     font-family: "Gelasio";
-    src: url("file:///home/hatch/.fonts/Gelasio-BoldItalic.ttf");
+    src: url("fonts/Gelasio-BoldItalic.ttf");
     font-weight: bold; font-style: italic;
   }
   @font-face {
     font-family: "CortexSymbology";
-    src: url("file:///home/hatch/workspace/user/files/CortexSymbology-Regular_0_krkf.ttf");
+    src: url("fonts/CortexSymbology-Regular_0_krkf.ttf");
   }
   .sym { font-family: "CortexSymbology"; font-size: 1.15em; vertical-align: -0.05em; }
   @page {
@@ -60,11 +60,11 @@
     content: ""; display: block; height: 2.5pt; margin-top: 3pt;
     background: linear-gradient(90deg, #2e6f9e 0%, #c98aa8 45%, #c7d6e4 80%, rgba(199,214,228,0) 100%);
   }
-  h3 { font-size: 10pt; margin: 6pt 0 3pt 0; page-break-after: avoid; color: #1e4d6e; }
-  h4 { font-size: 9.2pt; margin: 5pt 0 2pt 0; page-break-after: avoid; font-style: italic; color: #1e4d6e; }
-  p { margin: 0 0 3.5pt 0; text-align: left; widows: 3; orphans: 3; }
+  h3 { font-size: 10pt; margin: 5pt 0 2pt 0; page-break-after: avoid; color: #1e4d6e; }
+  h4 { font-size: 9.2pt; margin: 4pt 0 2pt 0; page-break-after: avoid; font-style: italic; color: #1e4d6e; }
+  p { margin: 0 0 3pt 0; text-align: left; widows: 3; orphans: 3; }
   ul, ol { margin: 0 0 5pt 0; padding-left: 18pt; }
-  li { margin-bottom: 1.5pt; }
+  li { margin-bottom: 1pt; }
   .dropcap::first-letter {
     font-size: 30pt; line-height: 0.85; float: left;
     padding: 3pt 5pt 0 0; color: #2e6f9e; font-weight: bold;
@@ -80,13 +80,12 @@
     letter-spacing: 8pt; text-indent: 8pt; color: #e9f2fa; margin: 0 0 12pt 0;
   }
   .snowline .r { color: #eec3d6; }
-  .cover { page-break-after: always; padding-top: 1.05in; text-align: center; }
-  .cover .frost {
-    position: absolute; top: 0; left: 0; width: 5.5in; height: 8.5in;
-    background: linear-gradient(178deg, #0b1e32 0%, #14324a 30%, #1f527a 55%, #5d93b8 80%, #aecadd 100%);
-  }
-  .cover > :not(.frost):not(.fl) { position: relative; }
-  .cover .fl { position: absolute; font-family: "DejaVu Sans", sans-serif; font-size: 20pt; color: rgba(233,242,250,0.55); }
+  .cover { page-break-after: always; padding-top: 1.05in; text-align: center; background: #fff; }
+  .cover .frost { display: none; }
+  .cover .frame { position: absolute; top: 0.28in; left: 0.28in; right: 0.28in; bottom: 0.28in; border: 1pt solid #c7d6e4; outline: 0.5pt solid #eec3d6; outline-offset: 2.5pt; }
+  .cover .bigflake { position: absolute; top: 1.35in; left: 0; right: 0; text-align: center; font-family: "DejaVu Sans", sans-serif; font-size: 150pt; line-height: 1; color: #edf3f9; }
+  .cover > :not(.frost):not(.fl):not(.frame):not(.bigflake) { position: relative; }
+  .cover .fl { position: absolute; font-family: "DejaVu Sans", sans-serif; font-size: 20pt; color: #b9d2e6; }
   .cover .fl.tl { top: 0.32in; left: 0.35in; }
   .cover .fl.tr { top: 0.32in; right: 0.35in; }
   .cover .fl.bl { bottom: 0.35in; left: 0.35in; }
@@ -94,51 +93,50 @@
   .cover .kicker {
     font-family: "DejaVu Sans", sans-serif;
     font-size: 10pt; letter-spacing: 4pt; text-indent: 4pt; text-transform: uppercase;
-    color: #c7d6e4; margin-bottom: 14pt;
+    color: #8a3f66; margin-bottom: 14pt;
   }
-  .cover h1 { font-size: 40pt; line-height: 1.04; margin-bottom: 8pt; color: #f7fbff; letter-spacing: 0.5pt; }
-  .cover .tagline { font-size: 11pt; font-style: italic; color: #dce8f3; margin-bottom: 12pt; padding: 0 0.45in; }
+  .cover h1 { font-size: 40pt; line-height: 1.04; margin-bottom: 8pt; color: #14324a; letter-spacing: 0.5pt; }
+  .cover .tagline { font-size: 11pt; font-style: italic; color: #4a5c70; margin-bottom: 12pt; padding: 0 0.45in; }
   .cover .box {
-    border: 1pt solid #c7d6e4; background: rgba(255,255,255,0.13);
-    padding: 8pt 13pt; margin: 0 0.35in 14pt 0.35in; font-size: 8.8pt; color: #eef4fa;
+    border: 1pt solid #8fb6d4; outline: 0.5pt solid #eec3d6; outline-offset: 2pt; background: #fff;
+    padding: 8pt 13pt; margin: 0 0.35in 14pt 0.35in; font-size: 8.8pt; color: #33475c;
   }
-  .cover .byline { font-family: "DejaVu Sans", sans-serif; font-size: 8pt; color: #b7cddd; letter-spacing: 0.5pt; }
+  .cover .byline { font-family: "DejaVu Sans", sans-serif; font-size: 8pt; color: #6a7078; letter-spacing: 0.5pt; padding: 0 0.5in; }
   .backcover { page-break-before: always; padding-top: 1.25in; text-align: center; }
-  .backcover .frost {
-    position: absolute; top: 0; left: 0; width: 5.5in; height: 8.5in;
-    background: linear-gradient(2deg, #0b1e32 0%, #14324a 35%, #2b5a85 62%, #7aa5c4 85%, #c3d7e8 100%);
-  }
-  .backcover > :not(.frost):not(.fl) { position: relative; }
-  .backcover .fl { position: absolute; font-family: "DejaVu Sans", sans-serif; font-size: 20pt; color: rgba(233,242,250,0.5); }
+  .backcover .frost { display: none; }
+  .backcover .frame { position: absolute; top: 0.28in; left: 0.28in; right: 0.28in; bottom: 0.28in; border: 1pt solid #c7d6e4; outline: 0.5pt solid #eec3d6; outline-offset: 2.5pt; }
+  .backcover .bigflake { position: absolute; top: 1.6in; left: 0; right: 0; text-align: center; font-family: "DejaVu Sans", sans-serif; font-size: 130pt; line-height: 1; color: #edf3f9; }
+  .backcover > :not(.frost):not(.fl):not(.frame):not(.bigflake) { position: relative; }
+  .backcover .fl { position: absolute; font-family: "DejaVu Sans", sans-serif; font-size: 20pt; color: #b9d2e6; }
   .backcover .fl.tl { top: 0.32in; left: 0.35in; }
   .backcover .fl.tr { top: 0.32in; right: 0.35in; }
   .backcover .fl.bl { bottom: 0.35in; left: 0.35in; }
   .backcover .fl.br { bottom: 0.35in; right: 0.35in; }
   .backcover h2.finale {
     font-size: 20pt; letter-spacing: 3pt; text-indent: 3pt;
-    color: #f7fbff; margin: 0 0 10pt 0;
+    color: #14324a; margin: 0 0 10pt 0;
   }
   .backcover h2.finale::before, .backcover h2.finale::after { content: none; display: none; }
   .backcover .closing {
-    font-style: italic; color: #e2edf6; font-size: 11pt; line-height: 1.5;
+    font-style: italic; color: #4a5c70; font-size: 11pt; line-height: 1.5;
     padding: 0 0.5in; margin: 0 0 16pt 0;
   }
   .backcover .legal {
-    font-size: 7.8pt; font-style: italic; color: #a9c2d8;
+    font-size: 7.8pt; font-style: italic; color: #6a7078;
     margin-top: 1.05in; padding: 0 0.4in;
   }
   .keybox {
     border: 1pt solid #8fb6d4;
     outline: 0.75pt solid #d8b9cb; outline-offset: -3.5pt;
-    background: linear-gradient(180deg, #f9fcff 0%, #e9f1f9 100%);
-    padding: 6pt 9pt; margin: 7pt 0; page-break-inside: avoid;
+    background: #fff;
+    padding: 5pt 8pt; margin: 6pt 0; page-break-inside: avoid;
   }
   .keybox h4 { margin-top: 0; color: #14324a; font-style: normal; }
   .keybox p:last-child, .keybox ul:last-child { margin-bottom: 0; }
   .sidebar {
     border-left: 3pt solid #c98aa8;
-    background: linear-gradient(180deg, #fdf8fb 0%, #f4e9f1 100%);
-    padding: 5pt 8pt; margin: 7pt 0; page-break-inside: avoid; font-size: 8.8pt;
+    background: #fff;
+    padding: 5pt 8pt; margin: 6pt 0; page-break-inside: avoid; font-size: 8.8pt;
   }
   .sidebar h4 { margin-top: 0; font-style: normal; color: #8a3f66; }
   .sidebar p:last-child { margin-bottom: 0; }
@@ -147,10 +145,10 @@
     font-size: 9pt; color: #33475c; border-left: 2pt solid #c7d6e4; padding-left: 8pt;
   }
   .epigraph .attr { font-style: normal; font-size: 8pt; color: #6a7078; display: block; margin-top: 2pt; }
-  table.traits { border-collapse: collapse; width: 100%; margin: 5pt 0 7pt 0; font-size: 8.8pt; }
+  table.traits { border-collapse: collapse; width: 100%; margin: 4pt 0 5pt 0; font-size: 8.8pt; }
   table.traits th {
-    background: linear-gradient(180deg, #2b5a85 0%, #14324a 100%);
-    color: #f2f7fc; text-align: left; padding: 3pt 5pt;
+    background: #e8eff7;
+    color: #14324a; border-bottom: 1.5pt solid #14324a; text-align: left; padding: 3pt 5pt;
     font-family: "DejaVu Sans", sans-serif; font-size: 8pt; letter-spacing: 0.5pt;
   }
   table.traits td { border-bottom: 0.75pt solid #c9d7e3; padding: 2.5pt 5pt; vertical-align: top; }
@@ -159,17 +157,19 @@
   .pagebreak { page-break-before: always; }
   .nobreak { page-break-inside: avoid; }
   .small { font-size: 8.2pt; color: #4a5c70; }
+  .tag { display: inline-block; font-size: 7pt; letter-spacing: 1.2pt; text-transform: uppercase; color: #a35d7f; border: 1pt solid #d9a8bd; border-radius: 7pt; padding: 0 6pt; margin-left: 5pt; vertical-align: middle; }
+  .ptags { font-size: 8pt; color: #5a4a5e; }
   .die { font-family: "DejaVu Sans", sans-serif; font-weight: bold; color: #14324a; white-space: nowrap; }
   .pp { font-family: "DejaVu Sans", sans-serif; font-weight: bold; color: #7a2e5e; white-space: nowrap; }
-  .charsheet { border: 1.5pt solid #14324a; padding: 5pt 8pt; margin: 5pt 0 7pt 0; page-break-inside: avoid; }
+  .charsheet { border: 1.5pt solid #14324a; padding: 5pt 8pt; margin: 4pt 0 5pt 0; page-break-inside: avoid; }
   .charsheet h3 {
     margin: -5pt -8pt 4pt -8pt; padding: 4pt 8pt;
-    background: linear-gradient(90deg, #14324a 0%, #2e6f9e 75%, #c98aa8 125%);
-    color: #f5f9fd; border-bottom: none;
+    background: #e8eff7;
+    color: #14324a; border-bottom: 1.5pt solid #14324a;
   }
   .charsheet .row { display: block; margin-bottom: 2pt; font-size: 8.8pt; }
   .charsheet .lbl { font-family: "DejaVu Sans", sans-serif; font-size: 7.5pt; text-transform: uppercase; letter-spacing: 1pt; color: #8a3f66; }
-  .prince { margin-bottom: 3pt; page-break-inside: avoid; }
+  .prince { margin-bottom: 2pt; page-break-inside: avoid; }
   .prince .pname { font-weight: bold; color: #14324a; }
 </style>
 </head>
@@ -177,7 +177,8 @@
 
 <!-- ================= COVER ================= -->
 <div class="cover">
-  <div class="frost"></div>
+  <div class="frame"></div>
+  <div class="bigflake">❄</div>
   <div class="fl tl">❄</div>
   <div class="fl tr">❄</div>
   <div class="fl bl">❄</div>
@@ -229,8 +230,8 @@ like a music video and a failure feels like reading old texts at 2 a.m.</p>
 
 <div class="keybox">
   <h4>What you need to play</h4>
-  <p>The Cortex Prime Game Handbook, a set of polyhedral dice per player, plot
-  point tokens (use glitter — actual glitter — if you dare), and 3–5 players.
+  <p>The Cortex Prime Game Handbook, a set of polyhedral dice per player, glitter
+  tokens (actual glitter, if you dare), and 3–5 players.
   One player is the <b>GM</b>, who runs the Twelve Princes, the factions, and
   the Blizzard of Heartbreak itself. Everyone else plays a winter elf of
   Girlville — or a fester witch, a sewer orc, or a goblin, because prom is for
@@ -254,8 +255,7 @@ like a music video and a failure feels like reading old texts at 2 a.m.</p>
 <p>Every PC is built from three prime sets — <b>Values</b>, <b>Relationships</b>,
 and <b>Roles</b> — plus <b>Distinctions</b> and the setting's signature extras:
 <b>Cryomancy</b> abilities, <b>Perks</b>, and a pool of <b>Glitter</b>. Only one
-trait from a given set enters a pool for free; a second costs
-<span class="pp">1 <span class="sym">Ⓟ</span></span>.</p>
+trait from a given set enters a pool for free; a second costs a glitter die.</p>
 
 <h3>Values</h3>
 <p>How intensely your elf is invested in an idea — a high rating is intensity,
@@ -304,7 +304,7 @@ and informants, never opposition pools.</p>
 
 <h3>Distinctions</h3>
 <p>Three per PC at <span class="die"><span class="sym">⑧</span></span>, each with the free
-<b>Hinder</b> SFX (<i>gain <span class="pp">1 <span class="sym">Ⓟ</span></span> when you swap this
+<b>Hinder</b> SFX (<i>gain a glitter die (your choice of kind) when you swap this
 <span class="die"><span class="sym">⑧</span></span> for a <span class="die"><span class="sym">④</span></span></i>). Examples:</p>
 <ul>
   <li><i>Frostgate Princess in Exile</i> — highlight: Socialite, Glamour</li>
@@ -330,7 +330,7 @@ it.</p>
 <div class="sidebar nobreak">
   <h4>Talent: <i>Winter's Memory</i></h4>
   <p><b>Activation:</b> when someone lies to you about the past.
-  <b>Effect:</b> spend <span class="pp">1 <span class="sym">Ⓟ</span></span> to declare one true thing
+  <b>Effect:</b> spend a glitter die to declare one true thing
   about what really happened — the fiction bends, not the dice. (Elves do not
   misremember. It is their blessing and their entire problem.)</p>
 </div>
@@ -338,7 +338,8 @@ it.</p>
 <h3>Fester Witch</h3>
 <p>A cavern-dwelling feminine race that turns putrescence into dark energy. What
 rots, they rule. Other peoples find them unsettling at galas; the witches find
-other peoples unsettling everywhere else.</p>
+other peoples unsettling everywhere else. Fester witch abilities carry the
+<b>Rot</b> tag by nature.</p>
 <div class="sidebar nobreak">
   <h4>Talent: <i>Rot to Power</i></h4>
   <p><b>Activation:</b> once per session, when you take a complication.
@@ -378,14 +379,14 @@ for free at creation, usable with the trait named:</p>
 <table class="traits">
   <tr><th>Sign</th><th>Unlocked SFX (with…)</th></tr>
   <tr><td>The Snowflake</td><td><b>The Edit</b> with Cryomancer — declare one true thing about the ice</td></tr>
-  <tr><td>The Gelatinous Beast</td><td><b>The Folly</b> with Blade — earn <span class="pp">1 <span class="sym">Ⓟ</span></span> charging something huge</td></tr>
+  <tr><td>The Gelatinous Beast</td><td><b>The Folly</b> with Blade — earn a glitter die (your choice of kind) charging something huge</td></tr>
   <tr><td>The Dagger</td><td><b>The Swap</b> with Raider — use Raider where Blade would fit</td></tr>
   <tr><td>The Crown</td><td><b>The Exchange</b> with Glamour — step up Glamour, step down Spite this scene</td></tr>
   <tr><td>The Mirror</td><td><b>The Edit</b> with Socialite — declare what someone <i>really</i> feels</td></tr>
   <tr><td>The Wolf</td><td><b>The Price</b> with Witch — step up Witch, take a <span class="die"><span class="sym">⑧</span></span> complication</td></tr>
-  <tr><td>The Star</td><td><b>The Shutdown</b> with Spite — earn <span class="pp">1 <span class="sym">Ⓟ</span></span>, Spite unusable this scene</td></tr>
+  <tr><td>The Star</td><td><b>The Shutdown</b> with Spite — earn a glitter die (your choice of kind), Spite unusable this scene</td></tr>
   <tr><td>The Prom Queen</td><td><b>The Swap</b> with Socialite — use Socialite where Cryomancer would fit</td></tr>
-  <tr><td>The Dungeon</td><td><b>The Folly</b> with Raider — earn <span class="pp">1 <span class="sym">Ⓟ</span></span> splitting the party</td></tr>
+  <tr><td>The Dungeon</td><td><b>The Folly</b> with Raider — earn a glitter die (your choice of kind) splitting the party</td></tr>
   <tr><td>The Prince</td><td><b>The Price</b> with an ex-Relationship — step it up, take a <span class="die"><span class="sym">⑧</span></span> complication</td></tr>
   <tr><td>The Witch</td><td><b>The Exchange</b> with Heartbreak — step up Heartbreak, step down Obsession this scene</td></tr>
   <tr><td>The Glitter</td><td><b>The Edit</b> with Glitter dice — declare where glitter can be found</td></tr>
@@ -398,7 +399,7 @@ for free at creation, usable with the trait named:</p>
 with its own activation and effect — representing the small unfair advantages
 that get you through character creation and, honestly, life:</p>
 <ul>
-  <li><b>Feminine Intuition</b> — <i>Activation:</i> spend <span class="pp">1 <span class="sym">Ⓟ</span></span>
+  <li><b>Feminine Intuition</b> — <i>Activation:</i> spend a glitter die
   when someone is hiding a feeling. <i>Effect:</i> the GM answers one question
   about what they feel, truthfully.</li>
   <li><b>Dance-Floor Diplomacy</b> — <i>Activation:</i> at the start of a social
@@ -408,13 +409,13 @@ that get you through character creation and, honestly, life:</p>
   time. <i>Effect:</i> learn his <i>Wound He Left</i> (see p.&nbsp;11) before he
   can use it.</li>
   <li><b>Glitter Sense</b> — <i>Activation:</i> when entering a new location.
-  <i>Effect:</i> the GM tells you where the nearest unclaimed Glitter is and
-  what kind.</li>
+  <i>Effect:</i> the GM tells you where the nearest unclaimed Glitter is, what kind,
+  and which tags hang thickest on the location.</li>
   <li><b>Promposal</b> — <i>Activation:</i> once per session.
   <i>Effect:</i> declare that someone present owes you a dance, a favor, or an
   explanation. They do.</li>
   <li><b>Road-Crew Tough</b> — <i>Activation:</i> when a complication would
-  take you out of a scene. <i>Effect:</i> spend <span class="pp">1 <span class="sym">Ⓟ</span></span> to
+  take you out of a scene. <i>Effect:</i> spend a glitter die to
   stay, with the complication stepped up one instead.</li>
 </ul>
 
@@ -423,105 +424,126 @@ that get you through character creation and, honestly, life:</p>
 <p>The frost-based magic of Girlville, crafted to mimic the <b>six branches of
 a snowflake</b>. Cryomancy uses the <b>Ability List</b>: each branch is a
 single rated trait bundling its descriptor, limit, and SFX, with one effect
-tag. A PC with the Cryomancer Role knows <b>two branches</b> at creation — one
+tag and one descriptor tag — Ice, Rot, or Charm (see Tags, p.&nbsp;8). A PC with the Cryomancer Role knows <b>two branches</b> at creation — one
 at <span class="die"><span class="sym">⑧</span></span>, one at <span class="die"><span class="sym">⑥</span></span>. Others may
 learn a branch later by inscribing its glyph (see p.&nbsp;8) and spending a
 Milestone unlock. Each branch carries the limit <b>Conscious Activation</b> —
 it shuts down while you are taken out — plus its own limit below.</p>
 
 <h3>The Six Branches</h3>
-<h4>❄ Heartfrost <span class="small">— Attack, Control</span></h4>
+<h4>❄ Heartfrost <span class="small">— Attack, Control</span> <span class="tag">Ice</span></h4>
 <p>Weaponize emotional cold; freeze what you cannot forgive. <i>Limit:</i>
 cannot harm someone you hold no grudge against — the ice needs a reason.
-<i>SFX:</i> <b>Shatter</b> — spend <span class="pp">1 <span class="sym">Ⓟ</span></span> to step up your
+<i>SFX:</i> <b>Shatter</b> — spend a glitter die to step up your
 effect die against a target suffering a Heartbreak complication.</p>
 
-<h4>❄ Glassveil <span class="small">— Defense</span></h4>
+<h4>❄ Glassveil <span class="small">— Defense</span> <span class="tag">Charm</span></h4>
 <p>Armor of mirror-ice; deflects blades and scrutiny alike.
 <i>Limit:</i> while active, your Glamour complications step up — everyone can
 see themselves in you, and some of them don't like it. <i>SFX:</i>
-<b>Reflect</b> — spend <span class="pp">1 <span class="sym">Ⓟ</span></span> to turn an attacker's
+<b>Reflect</b> — spend a glitter die to turn an attacker's
 effect die into a complication on them instead of you.</p>
 
-<h4>❄ Snowblind <span class="small">— Sensory</span></h4>
+<h4>❄ Snowblind <span class="small">— Sensory</span> <span class="tag">Ice</span></h4>
 <p>Read the storm; every flake remembers where it has been.
 <i>Limit:</i> visions arrive as weather, never words — the GM describes, you
-interpret. <i>SFX:</i> <b>Whiteout Memory</b> — spend
-<span class="pp">1 <span class="sym">Ⓟ</span></span> to ask the storm one question about the past of
+interpret. <i>SFX:</i> <b>Whiteout Memory</b> — spend a glitter die to ask the storm one question about the past of
 your current location.</p>
 
-<h4>❄ Deepdrift <span class="small">— Movement</span></h4>
+<h4>❄ Deepdrift <span class="small">— Movement</span> <span class="tag">Ice</span></h4>
 <p>Travel the snow between places; vanish into a whiteout and step out
 somewhere colder. <i>Limit:</i> you cannot arrive anywhere warm — the drift
-only goes downhill in temperature. <i>SFX:</i> <b>Cut Across</b> — spend
-<span class="pp">1 <span class="sym">Ⓟ</span></span> to arrive mid-scene somewhere you were not, with
+only goes downhill in temperature. <i>SFX:</i> <b>Cut Across</b> — spend a glitter die to arrive mid-scene somewhere you were not, with
 a <span class="die"><span class="sym">⑧</span></span> <i>Out of Nowhere</i> asset.</p>
 
-<h4>❄ Glint <span class="small">— Enhancement</span></h4>
+<h4>❄ Glint <span class="small">— Enhancement</span> <span class="tag">Charm</span></h4>
 <p>Sharpen allies like starlight on ice; lend your shine to someone else's
 edge. <i>Limit:</i> the target's next failure is <i>yours</i> socially —
 Glint marks the giver. <i>SFX:</i> <b>Starlight Loan</b> — step down your
 Glint die for the scene to step up an ally's Glamour or Blade die.</p>
 
-<h4>❄ Thaw <span class="small">— Control</span></h4>
+<h4>❄ Thaw <span class="small">— Control</span> <span class="tag">Rot</span></h4>
 <p>The forbidden warm branch: it melts, it mends, it ends. Thaw can heal
 complications and end enchantments — including the ones you like.
 <i>Limit:</i> <b>Growing Dread</b> — 1s <i>and</i> 2s hitch when rolling Thaw;
 the warmth remembers what the cold was protecting you from. <i>SFX:</i>
-<b>Spring's Price</b> — spend <span class="pp">1 <span class="sym">Ⓟ</span></span> to step down any
+<b>Spring's Price</b> — spend a glitter die to step down any
 complication by two steps instead of one on a recovery test.</p>
 
 <!-- ================= p6: THE GLITTER ================= -->
 <div class="glitterdiv"><span class="r">✦</span> ❄ <span class="r">✦</span></div>
 <h2>The Glitter</h2>
 <p>The Glitter is <b>both a currency and a character affliction</b> — the
-economy and the cosmic horror are the same substance. It comes in three kinds,
-each with unique status effects: <b>Ice Glitters</b>, <b>Rot Glitters</b>, and
-<b>Charm Glitters</b>. There is a little bit of cosmic horror tied into all of
-it. The Glitter is older than Girlville, and on quiet nights it whispers in a
-voice like a music box playing one note wrong.</p>
+economy and the cosmic horror are the same substance. It comes in three kinds:
+<b>Ice</b>, <b>Rot</b>, and <b>Charm</b>. There is a little bit of cosmic
+horror tied into all of it. The Glitter is older than Girlville, and on quiet
+nights it whispers in a voice like a music box playing one note wrong.</p>
+<p>There are no plot points in Girlville. There is only glitter. Each PC tracks
+<b>Glitter</b> as a pool of <span class="die"><span class="sym">⑥</span></span> dice,
+starting with <b>3</b> — your choice of kinds. At the start of each session,
+gain one more glitter die (your choice of kind); unspent glitter carries
+over.</p>
 
-<h3>Glitter as currency</h3>
-<p>Each PC tracks <b>Glitter</b> as a pool of <span class="die"><span class="sym">⑥</span></span> dice
-(starting with <b>2</b>). Glitter buys anything the fiction allows — club
-entry, bribes, spell components, a prince's attention, a faster sledge. Spend
-dice 1-for-1; spent dice return at the start of the next session, in downtime,
-or for <span class="pp">1 <span class="sym">Ⓟ</span></span> per die. You may also roll unspent Glitter
-dice as <b>Resources</b>: add any number to a pool, but they are spent once
-rolled and only the highest counts toward your total.</p>
+<h3>Earning glitter</h3>
+<p><b>Earn</b> a glitter die — your choice of kind — the way heroines always
+have: accept a hitch complication, give in during a contest, challenge a
+Value, Hinder a Distinction, unforgettable roleplay, or roll a
+<span class="die"><span class="sym">④</span></span>-rated trait. Glitter can also
+be <b>mined</b> in the Mines of Glimm&#x14d;r — the vein's kind is the GM's call
+(mostly Ice; Rot seams in the deep dark; Charm near the old ballroom).</p>
 
-<h3>Glitter as affliction</h3>
-<p>Whenever a Glitter die you spend or roll comes up a <b>hitch</b>, the
-Glitter takes hold: gain a <b>Glitter-touched</b> complication
+<h3>Spending glitter</h3>
+<p><b>Spend</b> a glitter die 1-for-1 on anything the fiction allows — club
+entry, bribes, spell components, a prince's attention, a faster sledge — or on
+any classic gambit: activate an SFX, add a die, create an asset, keep an extra
+die, interfere in a contest, trigger <b>déjà vu</b>, or stay standing by taking
+the complication instead of being taken out. Spent dice are gone — no roll, no
+risk. The Blizzard keeps them.</p>
+
+<h3>Rolling glitter</h3>
+<p><b>Roll</b> unspent glitter dice as <b>Resources</b>: add any number to a
+pool, but rolled dice are spent and only the highest counts toward your total.
+This is the dangerous half. Whenever a glitter die you <i>roll</i> comes up a
+<b>hitch</b>, the Glitter takes hold: gain a <b>Glitter-touched</b> complication
 (<span class="die"><span class="sym">⑥</span></span>, or stepped up if you already carry one), named
-for the kind that claimed you. Each kind afflicts differently:</p>
+for the kind that claimed you — and the complication <b>carries that kind's
+tag</b>. Each kind afflicts differently:</p>
 <ul>
-  <li><b>Ice Glitter — <i>Numb.</i></b> The cold gets in and stays. Ice
+  <li><b>Ice — <i>Numb.</i></b> The cold gets in and stays. Ice
   complications can only be recovered in genuine warmth — a recovery test
   requires another PC present and willing, or it automatically fails.</li>
-  <li><b>Rot Glitter — <i>Festering.</i></b> Doubt rots you from the inside.
+  <li><b>Rot — <i>Festering.</i></b> Doubt rots you from the inside.
   At the start of any scene you enter alone, the GM steps your Rot
   complication up one. Company is the only preservative.</li>
-  <li><b>Charm Glitter — <i>Beglamoured.</i></b> You cannot stop looking at
+  <li><b>Charm — <i>Beglamoured.</i></b> You cannot stop looking at
   how it sparkles. Once per scene the GM may activate your Charm complication
-  against you for free, no Plot Point required.</li>
+  against you for free.</li>
 </ul>
-<p>If every die in a pool hitches and Glitter was in the pool — a Glitter
+<p>If every die in a pool hitches and glitter was in the pool — a glitter
 <b>botch</b> — the GM may add a die to the Doom Pool <i>instead of</i> handing
 you a complication. The Glitter does not punish you. It <i>notices</i> you.</p>
 
+<h3>Tags: Ice, Rot, Charm</h3>
+<p>Ice, Rot, and Charm are <b>descriptor tags</b> — in the Cortex Codex sense,
+they say <i>how</i> a thing works. Everything glitter-related already carries
+its kind's tag: glitter dice, mined veins, Glitter-touched complications.
+Cryomancy branches carry one tag each (p.&nbsp;7); fester witch abilities are
+Rot-tagged by nature. Tags unlock SFX, feed prince vulnerabilities
+(p.&nbsp;11), and can be added to a branch or witch ability through growth
+<i>instead of</i> stepping up its die — your Glassveil learns Rot, and now your
+beautiful illusions fester.</p>
+
 <div class="keybox nobreak">
   <h4>Déjà vu &amp; Vampirism</h4>
-  <p><b>Déjà vu</b> — spend <span class="pp">1 <span class="sym">Ⓟ</span></span> after seeing your
+  <p><b>Déjà vu</b> — spend a glitter die after seeing your
   total to reroll your entire pool and take the new result. <i>"This has
   happened before."</i> Once per test; you cannot déjà vu a déjà vu.</p>
   <p><b>Vampirism</b> — an optional SFX any PC may take at creation:
-  <i>Feed.</i> <b>Activation:</b> a willing or helpless character with Glitter
+  <i>Feed.</i> <b>Activation:</b> a willing or helpless character with glitter
   dice or a Glitter-touched complication. <b>Effect:</b> drain them — step
-  down your Glitter-touched complication one (or recover
-  <span class="die"><span class="sym">⑥</span></span> Glitter dice from them) and step <i>their</i>
-  complication up one. The fiction should feel exactly as bad as it
-  sounds.</p>
+  down your Glitter-touched complication one (or take glitter dice from their
+  pool into yours) and step <i>their</i> complication up one. The fiction
+  should feel exactly as bad as it sounds.</p>
 </div>
 
 <div class="sidebar">
@@ -558,7 +580,7 @@ pre-built partial character and be playing in ten minutes — with full
   <li><b>Cryomancy (optional):</b> if you took the Cryomancer Role, choose two
   branches — one at <span class="die"><span class="sym">⑧</span></span>, one at
   <span class="die"><span class="sym">⑥</span></span>.</li>
-  <li><b>Take <span class="die"><span class="sym">⑥</span></span>×2 Glitter</b> and one signature asset
+  <li><b>Take <span class="die"><span class="sym">⑥</span></span>×3 Glitter</b> (your choice of kinds) and one signature asset
   at <span class="die"><span class="sym">⑥</span></span> (a coronet, a glyph-inscribed blade, an
   Olivia Rodrigo–branded dice bag — the fiction is yours).</li>
   <li><b>Write Value statements</b> — one line each, in your character's
@@ -613,12 +635,11 @@ picks next round's lead.</p>
 a Fester Witch matriarch, a named rival. Everything else is a test. In a
 high-stakes scene, compare <b>effect dice</b> (not totals) for taken-out vs.
 complicated: bigger effect die than the loser's means taken out; the loser may
-spend <span class="pp">1 <span class="sym">Ⓟ</span></span> to take the complication instead.</p>
+spend a glitter die to take the complication instead.</p>
 
 <h3>The Doom Pool: The Blizzard of Heartbreak</h3>
 <p>The setting's looming threat is weather, heartbreak, and weather-as-heartbreak.
-The Doom Pool <b>replaces difficulty dice for every test</b> and is the GM's
-Plot-Point equivalent. It opens each session at <b>2<span class="die"><span class="sym">⑥</span></span></b>
+The Doom Pool <b>replaces difficulty dice for every test</b> and is the GM's glitter-purse. It opens each session at <b>2<span class="die"><span class="sym">⑥</span></span></b>
 (colder for higher-stakes campaigns).</p>
 <ul>
   <li><b>It grows</b> whenever the GM activates a player's hitch — add a die
@@ -651,15 +672,17 @@ to shrink it; at zero dice, it's resolved.</p>
 </ul>
 
 <div class="sidebar nobreak">
-  <h4>Plot Points, briefly</h4>
-  <p>Start each session with <span class="pp">1 <span class="sym">Ⓟ</span></span>; unspent <span class="sym">Ⓟ</span> carry
-  over. <b>Earn</b> by accepting hitch complications, giving in during
-  contests, Hinder, strong roleplay, or rolling a
-  <span class="die"><span class="sym">④</span></span>-rated trait. <b>Spend</b> to add dice, activate
-  SFX, create assets, keep extra dice, interfere in contests, trigger
-  <b>déjà vu</b>, or stay standing by taking the complication instead of being
-  taken out. The GM keeps a <b>Bank</b> (one per player, for keeping princes in
-  the fight) and an unlimited <b>Pile</b>.</p>
+  <h4>Glitter, briefly</h4>
+  <p>Start with <span class="die"><span class="sym">⑥</span></span>×3 (your choice of
+  kinds); gain one more each session; unspent glitter carries over.
+  <b>Earn</b> by accepting hitch complications, giving in during contests,
+  challenging a Value, Hinder, strong roleplay, or rolling a
+  <span class="die"><span class="sym">④</span></span>-rated trait. <b>Spend</b> dice 1-for-1 on
+  fiction, SFX, déjà vu, extra dice, assets, interference, or staying in the
+  scene — or <b>roll</b> them as Resources and risk the affliction. Every
+  glitter die carries its kind's tag: Ice, Rot, or Charm. The GM keeps a
+  <b>Bank</b> (one die per player, for keeping princes in the fight) and an
+  unlimited <b>Pile</b>.</p>
 </div>
 
 <!-- ================= p9: OPPOSITION ================= -->
@@ -670,44 +693,51 @@ the elves' lovers</b>. They are Major GMCs — named, statted, and contestable.
 Each carries a <b>Wound He Left</b>: a complication the GM may inflict on
 introduction (no roll, once per prince per campaign — he only gets to make a
 first impression once).</p>
+<p>Each prince is <b>undone by</b> one tag and <b>immune to</b> another.
+<b>Undone by:</b> when your pool includes a die carrying that tag in a contest
+against him, step up your effect die one — you found the crack. <b>Immune
+to:</b> dice carrying that tag cannot be included in tests or contests against
+him at all. <i>Spent</i> glitter is never "included," so immunity blocks only
+<i>rolled</i> dice — Charm glitter is still spendable against a Charm-immune
+prince, just not rollable.</p>
 
 <div class="prince"><span class="pname">Prince Cassian the Coronet-Thief.</span>
 Wears your crown and your patience is gone. <i>Wound:</i> <i>He's Wearing It</i>
-<span class="die"><span class="sym">⑧</span></span>.</div>
+<span class="die"><span class="sym">⑧</span></span>. <span class="ptags"><b>Undone by:</b> Rot · <b>Immune to:</b> Charm</span></div>
 <div class="prince"><span class="pname">Prince Anselm of the Seventh Glyph.</span>
 Stole a sacred glyph for a necklace. <i>Wound:</i> <i>Sacrilege, But Make It Fashion</i>
-<span class="die"><span class="sym">⑧</span></span>.</div>
+<span class="die"><span class="sym">⑧</span></span>. <span class="ptags"><b>Undone by:</b> Ice · <b>Immune to:</b> Charm</span></div>
 <div class="prince"><span class="pname">Prince Milo Ravensent.</span>
 Ended it by raven, in winter, during a siege. <i>Wound:</i> <i>Read at Midnight</i>
-<span class="die"><span class="sym">⑩</span></span>.</div>
+<span class="die"><span class="sym">⑩</span></span>. <span class="ptags"><b>Undone by:</b> Charm · <b>Immune to:</b> Ice</span></div>
 <div class="prince"><span class="pname">Prince Dorian Glimm&#x14d;r.</span>
 Sold the Mines to fund his glow-up. <i>Wound:</i> <i>Everything Has a Price, Apparently You</i>
-<span class="die"><span class="sym">⑧</span></span>.</div>
+<span class="die"><span class="sym">⑧</span></span>. <span class="ptags"><b>Undone by:</b> Rot · <b>Immune to:</b> Charm</span></div>
 <div class="prince"><span class="pname">Prince Fenwick Underthrone.</span>
 Rules the sewers now; sends up notes. <i>Wound:</i> <i>A Letter, Damp</i>
-<span class="die"><span class="sym">⑥</span></span>.</div>
+<span class="die"><span class="sym">⑥</span></span>. <span class="ptags"><b>Undone by:</b> Ice · <b>Immune to:</b> Rot</span></div>
 <div class="prince"><span class="pname">Prince Halloran Frostbane.</span>
 Claims he "doesn't remember it that way." <i>Wound:</i> <i>Winter's Memory Says Otherwise</i>
-<span class="die"><span class="sym">⑩</span></span>.</div>
+<span class="die"><span class="sym">⑩</span></span>. <span class="ptags"><b>Undone by:</b> Ice · <b>Immune to:</b> Charm</span></div>
 <div class="prince"><span class="pname">Prince Ivo Lacehand.</span>
 Runs the Guild of Lacy Shadows like a spurned fan club. <i>Wound:</i> <i>He Knows About the Texts</i>
-<span class="die"><span class="sym">⑧</span></span>.</div>
+<span class="die"><span class="sym">⑧</span></span>. <span class="ptags"><b>Undone by:</b> Charm · <b>Immune to:</b> Rot</span></div>
 <div class="prince"><span class="pname">Prince Jaspar Makeout.</span>
 Founded the Mercenaries at Makeout Forge; all contracts paid in kisses and
 regret. <i>Wound:</i> <i>Still Owes You a Dance</i>
-<span class="die"><span class="sym">⑥</span></span>.</div>
+<span class="die"><span class="sym">⑥</span></span>. <span class="ptags"><b>Undone by:</b> Ice · <b>Immune to:</b> Charm</span></div>
 <div class="prince"><span class="pname">Prince Corvin Snowmere.</span>
 Married the Blizzard. It seems happy. <i>Wound:</i> <i>Replaced by Weather</i>
-<span class="die"><span class="sym">⑩</span></span>.</div>
+<span class="die"><span class="sym">⑩</span></span>. <span class="ptags"><b>Undone by:</b> Rot · <b>Immune to:</b> Ice</span></div>
 <div class="prince"><span class="pname">Prince Larkspur Vell.</span>
 A wizard, technically; a disappointment, specifically. <i>Wound:</i> <i>He Tried His Best (He Didn't)</i>
-<span class="die"><span class="sym">⑥</span></span>.</div>
+<span class="die"><span class="sym">⑥</span></span>. <span class="ptags"><b>Undone by:</b> Charm · <b>Immune to:</b> Rot</span></div>
 <div class="prince"><span class="pname">Prince Sable Mor.</span>
 Fester-witch adjacent; collects apologies he never gives. <i>Wound:</i> <i>An Apology Shaped Hole</i>
-<span class="die"><span class="sym">⑧</span></span>.</div>
+<span class="die"><span class="sym">⑧</span></span>. <span class="ptags"><b>Undone by:</b> Ice · <b>Immune to:</b> Rot</span></div>
 <div class="prince"><span class="pname">Prince Wren of Nowhere.</span>
 Nobody's ex. Shows up anyway. Knows things. <i>Wound:</i> <i>Why Is He Here</i>
-<span class="die"><span class="sym">⑧</span></span>.</div>
+<span class="die"><span class="sym">⑧</span></span>. <span class="ptags"><b>Undone by:</b> Rot · <b>Immune to:</b> Charm</span></div>
 
 <h3>Valford the Girly Mage</h3>
 <p>Major GMC and the closest thing Girlville has to a mentor. Valford designed
@@ -755,7 +785,7 @@ asset — fill in statements at the table, in your character's voice.</p>
   Valford the Girly Mage <span class="die"><span class="sym">⑥</span></span></span>
   <span class="row"><span class="lbl">Perks</span> — Cold Read, Road-Crew Tough &nbsp;·&nbsp;
   <span class="lbl">Asset</span> — <i>Glyph-inscribed lockpicks</i> <span class="die"><span class="sym">⑥</span></span></span>
-  <span class="row"><span class="lbl">Glitter</span> — <span class="die"><span class="sym">⑥</span></span>×2 (Rot) &nbsp;·&nbsp;
+  <span class="row"><span class="lbl">Glitter</span> — <span class="die"><span class="sym">⑥</span></span>×3 (Rot) &nbsp;·&nbsp;
   <span class="lbl">Want</span> — her coronet back, and for him to watch her take it</span>
 </div>
 
@@ -782,7 +812,7 @@ asset — fill in statements at the table, in your character's voice.</p>
   Her first rot-garden <span class="die"><span class="sym">⑥</span></span></span>
   <span class="row"><span class="lbl">Perks</span> — Glitter Sense, Promposal &nbsp;·&nbsp;
   <span class="lbl">Asset</span> — <i>A jar of prime putrescence</i> <span class="die"><span class="sym">⑥</span></span></span>
-  <span class="row"><span class="lbl">Glitter</span> — <span class="die"><span class="sym">⑥</span></span>×2 (Rot) &nbsp;·&nbsp;
+  <span class="row"><span class="lbl">Glitter</span> — <span class="die"><span class="sym">⑥</span></span>×3 (Rot) &nbsp;·&nbsp;
   <span class="lbl">Want</span> — to prove rot is just love with the shine off</span>
 </div>
 
@@ -810,7 +840,7 @@ asset — fill in statements at the table, in your character's voice.</p>
   Snowblind <span class="die"><span class="sym">⑥</span></span> &nbsp;·&nbsp;
   <span class="lbl">Perks</span> — Feminine Intuition, Dance-Floor Diplomacy</span>
   <span class="row"><span class="lbl">Asset</span> — <i>Olivia Rodrigo–branded dice bag</i> <span class="die"><span class="sym">⑥</span></span> &nbsp;·&nbsp;
-  <span class="lbl">Glitter</span> — <span class="die"><span class="sym">⑥</span></span>×2 (Charm)</span>
+  <span class="lbl">Glitter</span> — <span class="die"><span class="sym">⑥</span></span>×3 (Charm)</span>
   <span class="row"><span class="lbl">Want</span> — the seventh glyph, and for Anselm to give it back himself</span>
 </div>
 
@@ -837,7 +867,7 @@ asset — fill in statements at the table, in your character's voice.</p>
   Her wizard plus-one <span class="die"><span class="sym">⑥</span></span></span>
   <span class="row"><span class="lbl">Perks</span> — Dance-Floor Diplomacy, Promposal &nbsp;·&nbsp;
   <span class="lbl">Asset</span> — <i>A sash that says almost everything</i> <span class="die"><span class="sym">⑥</span></span></span>
-  <span class="row"><span class="lbl">Glitter</span> — <span class="die"><span class="sym">⑥</span></span>×2 (Charm) &nbsp;·&nbsp;
+  <span class="row"><span class="lbl">Glitter</span> — <span class="die"><span class="sym">⑥</span></span>×3 (Charm) &nbsp;·&nbsp;
   <span class="lbl">Want</span> — the crown back, the club back, the last word</span>
 </div>
 
@@ -933,8 +963,9 @@ and punish them for reaching.</p>
   fast convention slots).</li>
   <li><b>Complications:</b> Complications as harm (includes Glitter-touched
   variants: Ice, Rot, Charm); Double Jeopardy.</li>
-  <li><b>Plot Points:</b> standard, with Bank + Pile; custom spends: Déjà Vu
-  reroll, Feed (Vampirism), staying in a scene via Road-Crew Tough.</li>
+  <li><b>Glitter:</b> the currency — no plot points; Bank + Pile; spend or roll;
+  custom spends: Déjà Vu reroll, Feed (Vampirism), staying in a scene via
+  Road-Crew Tough; Ice/Rot/Charm descriptor tags.</li>
   <li><b>GMCs:</b> Major GMCs (the Twelve Princes, Valford the Girly Mage);
   Minor GMCs; Extras; Mobs; Location GMCs (the Grand Frost Ballroom, the
   Mines of Glimm&#x14d;r).</li>
@@ -950,13 +981,15 @@ and punish them for reaching.</p>
   <span class="die"><span class="sym">④</span></span> signature asset; 10 XP to step a trait to
   <span class="die"><span class="sym">⑩</span></span> or learn a new Cryomancy branch (with its
   glyph); 15 XP for <span class="die"><span class="sym">⑫</span></span> steps; 20 XP for the top
-  tier. Months-long campaigns should also let challenged Value statements
+  tier. When an unlock would step up a Cryomancy branch or witch ability, you
+  may instead add a new tag (Ice, Rot, or Charm) to it — a new way to use the
+  ability, per the Codex. Months-long campaigns should also let challenged Value statements
   rewrite the character — that's the real advancement here.</p>
 
 <div class="sidebar nobreak">
   <h4>For the original box set owners</h4>
   <p>If you own the $79.99 deluxe box: the Olivia Rodrigo–branded dice bag is
-  a perfectly good plot-point purse, and the Valford the Girly Mage miniature
+  a perfectly good glitter purse, and the Valford the Girly Mage miniature
   makes an excellent session-long <span class="die"><span class="sym">⑧</span></span> asset — once
   per session, place Valford on the table to declare that the Girly Mage
   <i>personally</i> vouches for you. The percentile dice are lovely. Keep them
@@ -965,7 +998,8 @@ and punish them for reaching.</p>
 
 <!-- ================= BACK COVER ================= -->
 <div class="backcover">
-  <div class="frost"></div>
+  <div class="frame"></div>
+  <div class="bigflake">❄</div>
   <div class="fl tl">❄</div>
   <div class="fl tr">❄</div>
   <div class="fl bl">❄</div>
