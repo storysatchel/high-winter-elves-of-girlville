@@ -81,9 +81,19 @@
   }
   .snowline .r { color: #eec3d6; }
   .cover { page-break-after: always; padding-top: 1.05in; text-align: center; background: #fff; }
-  .frontispiece { page-break-after: always; text-align: center; background: #fff; padding-top: 0.15in; }
-  .frontispiece img { width: 5.0in; }
-  .frontispiece .caption { font-style: italic; color: #4a5c70; font-size: 9pt; margin-top: 8pt; padding: 0 0.5in; }
+  @page mapspread {
+    size: 5.5in 8.5in;
+    margin: 0.35in 0.3in 0.35in 0.3in;
+    @bottom-center { content: none; }
+  }
+  @page mapspread:left { margin-right: 0.18in; }
+  @page mapspread:right { margin-left: 0.18in; }
+  .mapspread { page: mapspread; text-align: center; background: #fff; }
+  .mapspread-right { break-before: page; }
+  .mapspread .half { width: 100%; margin-top: 0.5in; overflow: hidden; }
+  .mapspread .half img { display: block; width: 200%; max-width: none; }
+  .mapspread-right .half img { margin-left: -100%; }
+  .mapspread .caption { font-style: italic; color: #4a5c70; font-size: 9pt; margin-top: 10pt; padding: 0 0.3in; }
   .cover .frost { display: none; }
   .cover .frame { position: absolute; top: 0.28in; left: 0.28in; right: 0.28in; bottom: 0.28in; border: 1pt solid #c7d6e4; outline: 0.5pt solid #eec3d6; outline-offset: 2.5pt; }
   .cover .bigflake { position: absolute; top: 1.35in; left: 0; right: 0; text-align: center; font-family: "DejaVu Sans", sans-serif; font-size: 150pt; line-height: 1; color: #edf3f9; }
@@ -201,13 +211,16 @@
   <div class="byline">Requires the Cortex Prime Game Handbook &nbsp;·&nbsp; 3–5 players &nbsp;·&nbsp; Print duplex, flip on long edge</div>
 </div>
 
-<!-- ================= FRONTISPIECE ================= -->
-<div class="frontispiece">
-  <img src="maps/girlville-frost-kingdom.png" alt="Map of the Frost Kingdom of Girlville">
+<!-- ================= MAP SPREAD (pp. 2-3) ================= -->
+<div class="mapspread mapspread-left">
+  <div class="half"><img src="maps/girlville-frost-kingdom.png" alt="Map of the Frost Kingdom of Girlville, western half"></div>
+</div>
+<div class="mapspread mapspread-right">
+  <div class="half"><img src="maps/girlville-frost-kingdom.png" alt="Map of the Frost Kingdom of Girlville, eastern half"></div>
   <div class="caption">The Frost Kingdom of Girlville — every ex has an address.</div>
 </div>
 
-<!-- ================= p2: GENRE / WHAT YOU NEED ================= -->
+<!-- ================= p4: GENRE / WHAT YOU NEED ================= -->
 <h2>Genre, Theme &amp; Mood</h2>
 
 <div class="epigraph">
