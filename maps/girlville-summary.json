@@ -1,4 +1,8 @@
 {
+  "canvas_inches": [
+    17,
+    11
+  ],
   "regions": [
     {
       "name": "Frostgate",
