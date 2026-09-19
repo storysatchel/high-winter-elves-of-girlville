@@ -3,8 +3,8 @@
     {
       "name": "Frostgate",
       "kind": "supply",
-      "fx": 0.4627,
-      "fy": 0.4359
+      "fx": 0.0772,
+      "fy": 0.4238
     },
     {
       "name": "Mines of Glimmōr",
@@ -87,8 +87,8 @@
     {
       "name": "The Coronet",
       "kind": "supply",
-      "fx": 0.39,
-      "fy": 0.4783
+      "fx": 0.9211,
+      "fy": 0.8872
     },
     {
       "name": "Snow fortress",
@@ -111,8 +111,8 @@
     {
       "name": "Glamwendia",
       "kind": "wild",
-      "fx": 0.0772,
-      "fy": 0.4238
+      "fx": 0.4627,
+      "fy": 0.4359
     },
     {
       "name": "Snowmere",
@@ -123,8 +123,8 @@
     {
       "name": "Nowhere",
       "kind": "wild",
-      "fx": 0.9211,
-      "fy": 0.8872
+      "fx": 0.3427,
+      "fy": 0.6775
     },
     {
       "name": "The Sewers",
