@@ -28,20 +28,22 @@ def main():
     gaz = re.sub(r' <span class="ptags">.*?</span>', "", gaz)
 
     # 2. re-insert from data, matched on gazetteer entry title
+    # (titles may carry a <sup>†</sup> shared-name mark; preserve it)
     want = {T.entry_title(raw): raw for raw in T.LOCATION_TAGS}
     done = []
 
     def repl(m):
-        title, body = m.group(1), m.group(2)
+        title, dagger, body = m.group(1), m.group(2) or "", m.group(3)
         if title in want:
             region = want[title]
             line = T.format_tagline(region)
             done.append(region)
-            return (f'<p><b>{title}.</b>{body} '
+            return (f'<p><b>{title}{dagger}.</b>{body} '
                     f'<span class="ptags">{line}</span></p>')
         return m.group(0)
 
-    gaz = re.sub(r"<p><b>([^<]+)\.</b>(.*?)</p>", repl, gaz, flags=re.S)
+    gaz = re.sub(r"<p><b>(.+?)(<sup>†</sup>)?\.</b>(.*?)</p>",
+                 repl, gaz, flags=re.S)
 
     missing = set(T.LOCATION_TAGS) - set(done)
     if missing:
