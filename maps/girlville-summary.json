@@ -3,86 +3,152 @@
     {
       "name": "Frostgate",
       "kind": "supply",
-      "fx": 0.5079,
-      "fy": 0.4163
+      "fx": 0.4391,
+      "fy": 0.436
     },
     {
       "name": "Mines of Glimmōr",
       "kind": "supply",
-      "fx": 0.1417,
-      "fy": 0.4208
+      "fx": 0.2222,
+      "fy": 0.5125
     },
     {
       "name": "Crystal Ballroom",
       "kind": "supply",
-      "fx": 0.7168,
-      "fy": 0.4668
+      "fx": 0.672,
+      "fy": 0.3453
     },
     {
       "name": "The Old Ballroom",
       "kind": "supply",
-      "fx": 0.8207,
-      "fy": 0.6779
+      "fx": 0.8389,
+      "fy": 0.6467
     },
     {
       "name": "Makeout Forge",
       "kind": "supply",
-      "fx": 0.4794,
-      "fy": 0.945
+      "fx": 0.3696,
+      "fy": 0.7423
     },
     {
       "name": "Guild of Lacy Shadows",
       "kind": "supply",
-      "fx": 0.6335,
-      "fy": 0.8064
+      "fx": 0.6918,
+      "fy": 0.5687
     },
     {
       "name": "The Sewers",
       "kind": "supply",
-      "fx": 0.4618,
-      "fy": 0.6467
+      "fx": 0.5456,
+      "fy": 0.5334
     },
     {
       "name": "The Coven Below the Frost",
       "kind": "supply",
-      "fx": 0.6332,
-      "fy": 0.0906
+      "fx": 0.6179,
+      "fy": 0.1441
     },
     {
       "name": "The Glyph-Archive",
       "kind": "supply",
-      "fx": 0.3216,
-      "fy": 0.1057
+      "fx": 0.3679,
+      "fy": 0.2425
+    },
+    {
+      "name": "The Grand Frost Ballroom",
+      "kind": "supply",
+      "fx": 0.527,
+      "fy": 0.2666
+    },
+    {
+      "name": "Underthrone",
+      "kind": "supply",
+      "fx": 0.5133,
+      "fy": 0.6946
+    },
+    {
+      "name": "Ravensent",
+      "kind": "supply",
+      "fx": 0.2311,
+      "fy": 0.2851
+    },
+    {
+      "name": "Frostbane",
+      "kind": "supply",
+      "fx": 0.8548,
+      "fy": 0.2535
+    },
+    {
+      "name": "Lacehand",
+      "kind": "supply",
+      "fx": 0.7653,
+      "fy": 0.8688
+    },
+    {
+      "name": "Vell",
+      "kind": "supply",
+      "fx": 0.1963,
+      "fy": 0.7039
+    },
+    {
+      "name": "Sable",
+      "kind": "supply",
+      "fx": 0.798,
+      "fy": 0.1247
+    },
+    {
+      "name": "The Coronet",
+      "kind": "supply",
+      "fx": 0.3905,
+      "fy": 0.5785
     },
     {
       "name": "The Blizzard",
       "kind": "wild",
-      "fx": 0.8393,
-      "fy": 0.1186
+      "fx": 0.4879,
+      "fy": 0.0536
     },
     {
       "name": "The Deep Dark",
       "kind": "wild",
-      "fx": 0.0325,
-      "fy": 0.2388
+      "fx": 0.201,
+      "fy": 0.1102
+    },
+    {
+      "name": "Glamwendia",
+      "kind": "wild",
+      "fx": 0.0358,
+      "fy": 0.5018
+    },
+    {
+      "name": "Snowmere",
+      "kind": "wild",
+      "fx": 0.8976,
+      "fy": 0.4865
+    },
+    {
+      "name": "Nowhere",
+      "kind": "wild",
+      "fx": 0.9095,
+      "fy": 0.9519
     },
     {
       "name": "Snow fortress",
       "kind": "waypoint",
-      "fx": 0.2565,
-      "fy": 0.7148
+      "fx": 0.2569,
+      "fy": 0.8323
     },
     {
       "name": "Frost dungeon",
       "kind": "waypoint",
-      "fx": 0.8218,
-      "fy": 0.8956
+      "fx": 0.6335,
+      "fy": 0.8064
     },
     {
       "name": "Dance club",
       "kind": "waypoint",
-      "fx": 0.9892,
-      "fy": 0.5631
+      "fx": 0.9779,
+      "fy": 0.3579
     }
   ]
 }
