@@ -229,11 +229,11 @@ def build_figure():
 
     # Title block (figure coordinates — clear of the map)
     fig.text(0.5, 0.945, "The Frost Kingdom of Girlville",
-             fontsize=57, color=SLATE, ha="center", va="center",
+             fontsize=40, color=SLATE, ha="center", va="center",
              family="serif", weight="bold")
-    fig.text(0.5, 0.04, "diamond \u2014 supply  \u00b7  star \u2014 wild  \u00b7  circle \u2014 neutral ground",
+    fig.text(0.5, 0.04, "\u25c6 \u2014 supply  \u00b7  \u2605 \u2014 wild  \u00b7  \u25cb \u2014 neutral ground",
              fontsize=24, color=WAY_C, ha="center", va="center",
-             family="serif")
+             family="DejaVu Sans")
 
     return fig, ax, texts, xy
 
