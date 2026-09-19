@@ -61,19 +61,19 @@
       "fy": 0.6793
     },
     {
-      "name": "Ravensent",
+      "name": "Federwald",
       "kind": "supply",
       "fx": 0.1114,
       "fy": 0.3356
     },
     {
-      "name": "Frostbane",
+      "name": "Runewick",
       "kind": "supply",
       "fx": 0.8486,
       "fy": 0.2012
     },
     {
-      "name": "Lacehand",
+      "name": "Lacefield",
       "kind": "supply",
       "fx": 0.8166,
       "fy": 0.6612
@@ -145,7 +145,7 @@
       "fy": 0.5354
     },
     {
-      "name": "Vell",
+      "name": "Waymeet",
       "kind": "waypoint",
       "fx": 0.0793,
       "fy": 0.6514
