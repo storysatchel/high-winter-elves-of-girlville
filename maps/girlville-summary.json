@@ -37,12 +37,6 @@
       "fy": 0.6253
     },
     {
-      "name": "The Sewers",
-      "kind": "supply",
-      "fx": 0.5019,
-      "fy": 0.5885
-    },
-    {
       "name": "The Coven Below the Frost",
       "kind": "supply",
       "fx": 0.6583,
@@ -85,12 +79,6 @@
       "fy": 0.6612
     },
     {
-      "name": "Vell",
-      "kind": "supply",
-      "fx": 0.0793,
-      "fy": 0.6514
-    },
-    {
       "name": "Sable",
       "kind": "supply",
       "fx": 0.7418,
@@ -101,6 +89,12 @@
       "kind": "supply",
       "fx": 0.39,
       "fy": 0.4783
+    },
+    {
+      "name": "Snow fortress",
+      "kind": "supply",
+      "fx": 0.3116,
+      "fy": 0.7936
     },
     {
       "name": "The Blizzard",
@@ -133,10 +127,10 @@
       "fy": 0.8872
     },
     {
-      "name": "Snow fortress",
-      "kind": "waypoint",
-      "fx": 0.3116,
-      "fy": 0.7936
+      "name": "The Sewers",
+      "kind": "wild",
+      "fx": 0.5019,
+      "fy": 0.5885
     },
     {
       "name": "Frost dungeon",
@@ -149,6 +143,12 @@
       "kind": "waypoint",
       "fx": 0.6229,
       "fy": 0.5354
+    },
+    {
+      "name": "Vell",
+      "kind": "waypoint",
+      "fx": 0.0793,
+      "fy": 0.6514
     }
   ]
 }
