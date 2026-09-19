@@ -1,1 +1,169 @@
+name: Build and release PDFs
 
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pdf-release-main
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Render PDFs
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install PDF toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends -y \
+            libpango-1.0-0 \
+            libpangoft2-1.0-0
+          python -m pip install --upgrade pip
+          python -m pip install weasyprint pypdf
+
+      - name: Render reading PDF
+        run: |
+          test -f manuscript.html
+          mkdir -p dist
+          weasyprint manuscript.html dist/girlville-halfletter.pdf
+
+      - name: Impose print-ready signatures
+        env:
+          INPUT_PDF: dist/girlville-halfletter.pdf
+          OUTPUT_PDF: dist/girlville-signatures.pdf
+        run: |
+          python - <<'PY'
+          import os
+
+          from pypdf import PdfReader, PdfWriter, Transformation
+          from pypdf._page import PageObject
+
+          reader = PdfReader(os.environ["INPUT_PDF"])
+          source_pages = list(reader.pages)
+
+          if not source_pages:
+              raise SystemExit("The rendered PDF contains no pages")
+
+          # A booklet requires a page count divisible by four.
+          while len(source_pages) % 4:
+              source_pages.append(None)
+
+          page_count = len(source_pages)
+
+          # US Letter landscape, in points.
+          letter_width = 792
+          letter_height = 612
+          half_width = letter_width / 2
+
+          writer = PdfWriter()
+
+          def imposed_page(left, right):
+              sheet = PageObject.create_blank_page(
+                  width=letter_width,
+                  height=letter_height,
+              )
+
+              for source, x_position in (
+                  (left, 0),
+                  (right, half_width),
+              ):
+                  if source is None:
+                      continue
+
+                  source_width = float(source.mediabox.width)
+                  source_height = float(source.mediabox.height)
+
+                  scale = min(
+                      half_width / source_width,
+                      letter_height / source_height,
+                  )
+
+                  offset_x = (
+                      x_position
+                      + (half_width - source_width * scale) / 2
+                  )
+                  offset_y = (
+                      letter_height - source_height * scale
+                  ) / 2
+
+                  sheet.merge_transformed_page(
+                      source,
+                      Transformation()
+                      .scale(scale, scale)
+                      .translate(offset_x, offset_y),
+                  )
+
+              return sheet
+
+          # Standard booklet order, from the outside sheet toward the center.
+          for sheet_start in range(0, page_count // 4):
+              writer.add_page(
+                  imposed_page(
+                      source_pages[page_count - 1 - 2 * sheet_start],
+                      source_pages[2 * sheet_start],
+                  )
+              )
+
+              writer.add_page(
+                  imposed_page(
+                      source_pages[2 * sheet_start + 1],
+                      source_pages[page_count - 2 - 2 * sheet_start],
+                  )
+              )
+
+          with open(os.environ["OUTPUT_PDF"], "wb") as output:
+              writer.write(output)
+          PY
+
+      - name: Check generated files
+        run: |
+          test -s dist/girlville-halfletter.pdf
+          test -s dist/girlville-signatures.pdf
+          ls -lh dist/*.pdf
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: girlville-pdfs-${{ github.run_number }}
+          path: dist/*.pdf
+          if-no-files-found: error
+
+  release:
+    name: Create GitHub release
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download generated PDFs
+        uses: actions/download-artifact@v4
+        with:
+          name: girlville-pdfs-${{ github.run_number }}
+          path: dist
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: build-${{ github.run_number }}
+        run: |
+          gh release create "$RELEASE_TAG" \
+            --repo "$GITHUB_REPOSITORY" \
+            --target "$GITHUB_SHA" \
+            --title "PDFs from ${GITHUB_SHA::7}" \
+            --generate-notes \
+            dist/girlville-halfletter.pdf \
+            dist/girlville-signatures.pdf
