@@ -1,0 +1,88 @@
+{
+  "regions": [
+    {
+      "name": "Frostgate",
+      "kind": "supply",
+      "fx": 0.5079,
+      "fy": 0.4163
+    },
+    {
+      "name": "Mines of Glimmōr",
+      "kind": "supply",
+      "fx": 0.1417,
+      "fy": 0.4208
+    },
+    {
+      "name": "Crystal Ballroom",
+      "kind": "supply",
+      "fx": 0.7168,
+      "fy": 0.4668
+    },
+    {
+      "name": "The Old Ballroom",
+      "kind": "supply",
+      "fx": 0.8207,
+      "fy": 0.6779
+    },
+    {
+      "name": "Makeout Forge",
+      "kind": "supply",
+      "fx": 0.4794,
+      "fy": 0.945
+    },
+    {
+      "name": "Guild of Lacy Shadows",
+      "kind": "supply",
+      "fx": 0.6335,
+      "fy": 0.8064
+    },
+    {
+      "name": "The Sewers",
+      "kind": "supply",
+      "fx": 0.4618,
+      "fy": 0.6467
+    },
+    {
+      "name": "The Coven Below the Frost",
+      "kind": "supply",
+      "fx": 0.6332,
+      "fy": 0.0906
+    },
+    {
+      "name": "The Glyph-Archive",
+      "kind": "supply",
+      "fx": 0.3216,
+      "fy": 0.1057
+    },
+    {
+      "name": "The Blizzard",
+      "kind": "wild",
+      "fx": 0.8393,
+      "fy": 0.1186
+    },
+    {
+      "name": "The Deep Dark",
+      "kind": "wild",
+      "fx": 0.0325,
+      "fy": 0.2388
+    },
+    {
+      "name": "Snow fortress",
+      "kind": "waypoint",
+      "fx": 0.2565,
+      "fy": 0.7148
+    },
+    {
+      "name": "Frost dungeon",
+      "kind": "waypoint",
+      "fx": 0.8218,
+      "fy": 0.8956
+    },
+    {
+      "name": "Dance club",
+      "kind": "waypoint",
+      "fx": 0.9892,
+      "fy": 0.5631
+    }
+  ]
+}
