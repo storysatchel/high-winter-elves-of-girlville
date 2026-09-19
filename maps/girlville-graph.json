@@ -1,0 +1,860 @@
+{
+ "graph_metadata": {
+  "title": "The Frost Kingdom of Girlville",
+  "total_nodes": 25,
+  "supply_center_count": 16
+ },
+ "nodes": {
+  "Frostgate": {
+   "id": "Frostgate",
+   "name": "Frostgate",
+   "space_type": "inland",
+   "campaign_role": "supply",
+   "parent_province_id": null,
+   "coast_variant_ids": [],
+   "is_supply_center": true,
+   "home_power_id": null,
+   "controlling_faction_id": null,
+   "occupying_unit": null,
+   "matrix_cells": [],
+   "dungeon_template": null
+  },
+  "Mines of Glimm\u014dr": {
+   "id": "Mines of Glimm\u014dr",
+   "name": "Mines of Glimm\u014dr",
+   "space_type": "inland",
+   "campaign_role": "supply",
+   "parent_province_id": null,
+   "coast_variant_ids": [],
+   "is_supply_center": true,
+   "home_power_id": null,
+   "controlling_faction_id": null,
+   "occupying_unit": null,
+   "matrix_cells": [],
+   "dungeon_template": null
+  },
+  "Crystal Ballroom": {
+   "id": "Crystal Ballroom",
+   "name": "Crystal Ballroom",
+   "space_type": "inland",
+   "campaign_role": "supply",
+   "parent_province_id": null,
+   "coast_variant_ids": [],
+   "is_supply_center": true,
+   "home_power_id": null,
+   "controlling_faction_id": null,
+   "occupying_unit": null,
+   "matrix_cells": [],
+   "dungeon_template": null
+  },
+  "The Old Ballroom": {
+   "id": "The Old Ballroom",
+   "name": "The Old Ballroom",
+   "space_type": "inland",
+   "campaign_role": "supply",
+   "parent_province_id": null,
+   "coast_variant_ids": [],
+   "is_supply_center": true,
+   "home_power_id": null,
+   "controlling_faction_id": null,
+   "occupying_unit": null,
+   "matrix_cells": [],
+   "dungeon_template": null
+  },
+  "Makeout Forge": {
+   "id": "Makeout Forge",
+   "name": "Makeout Forge",
+   "space_type": "inland",
+   "campaign_role": "supply",
+   "parent_province_id": null,
+   "coast_variant_ids": [],
+   "is_supply_center": true,
+   "home_power_id": null,
+   "controlling_faction_id": null,
+   "occupying_unit": null,
+   "matrix_cells": [],
+   "dungeon_template": null
+  },
+  "Guild of Lacy Shadows": {
+   "id": "Guild of Lacy Shadows",
+   "name": "Guild of Lacy Shadows",
+   "space_type": "inland",
+   "campaign_role": "supply",
+   "parent_province_id": null,
+   "coast_variant_ids": [],
+   "is_supply_center": true,
+   "home_power_id": null,
+   "controlling_faction_id": null,
+   "occupying_unit": null,
+   "matrix_cells": [],
+   "dungeon_template": null
+  },
+  "The Coven Below the Frost": {
+   "id": "The Coven Below the Frost",
+   "name": "The Coven Below the Frost",
+   "space_type": "inland",
+   "campaign_role": "supply",
+   "parent_province_id": null,
+   "coast_variant_ids": [],
+   "is_supply_center": true,
+   "home_power_id": null,
+   "controlling_faction_id": null,
+   "occupying_unit": null,
+   "matrix_cells": [],
+   "dungeon_template": null
+  },
+  "The Glyph-Archive": {
+   "id": "The Glyph-Archive",
+   "name": "The Glyph-Archive",
+   "space_type": "inland",
+   "campaign_role": "supply",
+   "parent_province_id": null,
+   "coast_variant_ids": [],
+   "is_supply_center": true,
+   "home_power_id": null,
+   "controlling_faction_id": null,
+   "occupying_unit": null,
+   "matrix_cells": [],
+   "dungeon_template": null
+  },
+  "The Grand Frost Ballroom": {
+   "id": "The Grand Frost Ballroom",
+   "name": "The Grand Frost Ballroom",
+   "space_type": "inland",
+   "campaign_role": "supply",
+   "parent_province_id": null,
+   "coast_variant_ids": [],
+   "is_supply_center": true,
+   "home_power_id": null,
+   "controlling_faction_id": null,
+   "occupying_unit": null,
+   "matrix_cells": [],
+   "dungeon_template": null
+  },
+  "Underthrone": {
+   "id": "Underthrone",
+   "name": "Underthrone",
+   "space_type": "coastal",
+   "campaign_role": "supply",
+   "parent_province_id": null,
+   "coast_variant_ids": [],
+   "is_supply_center": true,
+   "home_power_id": null,
+   "controlling_faction_id": null,
+   "occupying_unit": null,
+   "matrix_cells": [],
+   "dungeon_template": null
+  },
+  "Federwald": {
+   "id": "Federwald",
+   "name": "Federwald",
+   "space_type": "inland",
+   "campaign_role": "supply",
+   "parent_province_id": null,
+   "coast_variant_ids": [],
+   "is_supply_center": true,
+   "home_power_id": null,
+   "controlling_faction_id": null,
+   "occupying_unit": null,
+   "matrix_cells": [],
+   "dungeon_template": null
+  },
+  "Runewick": {
+   "id": "Runewick",
+   "name": "Runewick",
+   "space_type": "inland",
+   "campaign_role": "supply",
+   "parent_province_id": null,
+   "coast_variant_ids": [],
+   "is_supply_center": true,
+   "home_power_id": null,
+   "controlling_faction_id": null,
+   "occupying_unit": null,
+   "matrix_cells": [],
+   "dungeon_template": null
+  },
+  "Lacefield": {
+   "id": "Lacefield",
+   "name": "Lacefield",
+   "space_type": "inland",
+   "campaign_role": "supply",
+   "parent_province_id": null,
+   "coast_variant_ids": [],
+   "is_supply_center": true,
+   "home_power_id": null,
+   "controlling_faction_id": null,
+   "occupying_unit": null,
+   "matrix_cells": [],
+   "dungeon_template": null
+  },
+  "Sable": {
+   "id": "Sable",
+   "name": "Sable",
+   "space_type": "inland",
+   "campaign_role": "supply",
+   "parent_province_id": null,
+   "coast_variant_ids": [],
+   "is_supply_center": true,
+   "home_power_id": null,
+   "controlling_faction_id": null,
+   "occupying_unit": null,
+   "matrix_cells": [],
+   "dungeon_template": null
+  },
+  "The Coronet": {
+   "id": "The Coronet",
+   "name": "The Coronet",
+   "space_type": "inland",
+   "campaign_role": "supply",
+   "parent_province_id": null,
+   "coast_variant_ids": [],
+   "is_supply_center": true,
+   "home_power_id": null,
+   "controlling_faction_id": null,
+   "occupying_unit": null,
+   "matrix_cells": [],
+   "dungeon_template": null
+  },
+  "Snow fortress": {
+   "id": "Snow fortress",
+   "name": "Snow fortress",
+   "space_type": "inland",
+   "campaign_role": "supply",
+   "parent_province_id": null,
+   "coast_variant_ids": [],
+   "is_supply_center": true,
+   "home_power_id": null,
+   "controlling_faction_id": null,
+   "occupying_unit": null,
+   "matrix_cells": [],
+   "dungeon_template": null
+  },
+  "The Blizzard": {
+   "id": "The Blizzard",
+   "name": "The Blizzard",
+   "space_type": "inland",
+   "campaign_role": "wild",
+   "parent_province_id": null,
+   "coast_variant_ids": [],
+   "is_supply_center": false,
+   "home_power_id": null,
+   "controlling_faction_id": null,
+   "occupying_unit": null,
+   "matrix_cells": [],
+   "dungeon_template": null
+  },
+  "The Deep Dark": {
+   "id": "The Deep Dark",
+   "name": "The Deep Dark",
+   "space_type": "inland",
+   "campaign_role": "wild",
+   "parent_province_id": null,
+   "coast_variant_ids": [],
+   "is_supply_center": false,
+   "home_power_id": null,
+   "controlling_faction_id": null,
+   "occupying_unit": null,
+   "matrix_cells": [],
+   "dungeon_template": null
+  },
+  "Glamwendia": {
+   "id": "Glamwendia",
+   "name": "Glamwendia",
+   "space_type": "coastal",
+   "campaign_role": "wild",
+   "parent_province_id": null,
+   "coast_variant_ids": [],
+   "is_supply_center": false,
+   "home_power_id": null,
+   "controlling_faction_id": null,
+   "occupying_unit": null,
+   "matrix_cells": [],
+   "dungeon_template": null
+  },
+  "Snowmere": {
+   "id": "Snowmere",
+   "name": "Snowmere",
+   "space_type": "inland",
+   "campaign_role": "wild",
+   "parent_province_id": null,
+   "coast_variant_ids": [],
+   "is_supply_center": false,
+   "home_power_id": null,
+   "controlling_faction_id": null,
+   "occupying_unit": null,
+   "matrix_cells": [],
+   "dungeon_template": null
+  },
+  "Nowhere": {
+   "id": "Nowhere",
+   "name": "Nowhere",
+   "space_type": "coastal",
+   "campaign_role": "wild",
+   "parent_province_id": null,
+   "coast_variant_ids": [],
+   "is_supply_center": false,
+   "home_power_id": null,
+   "controlling_faction_id": null,
+   "occupying_unit": null,
+   "matrix_cells": [],
+   "dungeon_template": null
+  },
+  "The Sewers": {
+   "id": "The Sewers",
+   "name": "The Sewers",
+   "space_type": "sea",
+   "campaign_role": "wild",
+   "parent_province_id": null,
+   "coast_variant_ids": [],
+   "is_supply_center": false,
+   "home_power_id": null,
+   "controlling_faction_id": null,
+   "occupying_unit": null,
+   "matrix_cells": [],
+   "dungeon_template": null
+  },
+  "Frost dungeon": {
+   "id": "Frost dungeon",
+   "name": "Frost dungeon",
+   "space_type": "coastal",
+   "campaign_role": "waypoint",
+   "parent_province_id": null,
+   "coast_variant_ids": [],
+   "is_supply_center": false,
+   "home_power_id": null,
+   "controlling_faction_id": null,
+   "occupying_unit": null,
+   "matrix_cells": [],
+   "dungeon_template": null
+  },
+  "Dance club": {
+   "id": "Dance club",
+   "name": "Dance club",
+   "space_type": "coastal",
+   "campaign_role": "waypoint",
+   "parent_province_id": null,
+   "coast_variant_ids": [],
+   "is_supply_center": false,
+   "home_power_id": null,
+   "controlling_faction_id": null,
+   "occupying_unit": null,
+   "matrix_cells": [],
+   "dungeon_template": null
+  },
+  "Waymeet": {
+   "id": "Waymeet",
+   "name": "Waymeet",
+   "space_type": "inland",
+   "campaign_role": "waypoint",
+   "parent_province_id": null,
+   "coast_variant_ids": [],
+   "is_supply_center": false,
+   "home_power_id": null,
+   "controlling_faction_id": null,
+   "occupying_unit": null,
+   "matrix_cells": [],
+   "dungeon_template": null
+  }
+ },
+ "army_edges": [
+  {
+   "source_id": "The Deep Dark",
+   "target_id": "Frostgate",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "The Deep Dark",
+   "target_id": "The Blizzard",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "The Deep Dark",
+   "target_id": "Federwald",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "The Deep Dark",
+   "target_id": "The Glyph-Archive",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "The Deep Dark",
+   "target_id": "The Grand Frost Ballroom",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Frostgate",
+   "target_id": "Waymeet",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Frostgate",
+   "target_id": "Federwald",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Frostgate",
+   "target_id": "Mines of Glimm\u014dr",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Federwald",
+   "target_id": "The Glyph-Archive",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Federwald",
+   "target_id": "Mines of Glimm\u014dr",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Snowmere",
+   "target_id": "Crystal Ballroom",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Snowmere",
+   "target_id": "Runewick",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Snowmere",
+   "target_id": "The Old Ballroom",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Snowmere",
+   "target_id": "The Coronet",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Runewick",
+   "target_id": "Sable",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Runewick",
+   "target_id": "Crystal Ballroom",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "The Blizzard",
+   "target_id": "Sable",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "The Blizzard",
+   "target_id": "The Grand Frost Ballroom",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "The Blizzard",
+   "target_id": "The Coven Below the Frost",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Sable",
+   "target_id": "Crystal Ballroom",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Sable",
+   "target_id": "The Coven Below the Frost",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "The Grand Frost Ballroom",
+   "target_id": "The Glyph-Archive",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "The Grand Frost Ballroom",
+   "target_id": "The Coven Below the Frost",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "The Grand Frost Ballroom",
+   "target_id": "Glamwendia",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "The Coven Below the Frost",
+   "target_id": "Crystal Ballroom",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "The Coven Below the Frost",
+   "target_id": "Glamwendia",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Waymeet",
+   "target_id": "Mines of Glimm\u014dr",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Waymeet",
+   "target_id": "Snow fortress",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Mines of Glimm\u014dr",
+   "target_id": "The Glyph-Archive",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Mines of Glimm\u014dr",
+   "target_id": "Snow fortress",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Mines of Glimm\u014dr",
+   "target_id": "Nowhere",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "The Glyph-Archive",
+   "target_id": "Glamwendia",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "The Glyph-Archive",
+   "target_id": "Nowhere",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Snow fortress",
+   "target_id": "Makeout Forge",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Snow fortress",
+   "target_id": "Nowhere",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Makeout Forge",
+   "target_id": "The Coronet",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Makeout Forge",
+   "target_id": "Frost dungeon",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Makeout Forge",
+   "target_id": "Underthrone",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Makeout Forge",
+   "target_id": "Nowhere",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Lacefield",
+   "target_id": "The Old Ballroom",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Lacefield",
+   "target_id": "The Coronet",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Lacefield",
+   "target_id": "Guild of Lacy Shadows",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Lacefield",
+   "target_id": "Frost dungeon",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "The Old Ballroom",
+   "target_id": "Crystal Ballroom",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "The Old Ballroom",
+   "target_id": "The Coronet",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "The Old Ballroom",
+   "target_id": "Guild of Lacy Shadows",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "The Coronet",
+   "target_id": "Frost dungeon",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Crystal Ballroom",
+   "target_id": "Glamwendia",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Crystal Ballroom",
+   "target_id": "Guild of Lacy Shadows",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Crystal Ballroom",
+   "target_id": "Dance club",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Guild of Lacy Shadows",
+   "target_id": "Frost dungeon",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Guild of Lacy Shadows",
+   "target_id": "Dance club",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Dance club",
+   "target_id": "Glamwendia",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Dance club",
+   "target_id": "Frost dungeon",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Glamwendia",
+   "target_id": "Nowhere",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Nowhere",
+   "target_id": "Underthrone",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Underthrone",
+   "target_id": "Frost dungeon",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  }
+ ],
+ "fleet_edges": [
+  {
+   "source_id": "The Sewers",
+   "target_id": "Dance club",
+   "layer": "E_F",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "The Sewers",
+   "target_id": "Glamwendia",
+   "layer": "E_F",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "The Sewers",
+   "target_id": "Nowhere",
+   "layer": "E_F",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "The Sewers",
+   "target_id": "Underthrone",
+   "layer": "E_F",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "The Sewers",
+   "target_id": "Frost dungeon",
+   "layer": "E_F",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  }
+ ],
+ "convoy_edges": []
+}
