@@ -1,11 +1,13 @@
-"""Girlville spread map: 17 x 11 in @ 300 dpi — the frontispiece spread,
-printed across the first fold after the title page.
+"""Girlville spread map: 17 x 13.14 in @ 300 dpi (5100x3941 px) — the
+frontispiece spread, exactly the 11:8.5 two-up half-letter ratio.
 
 Applies the current schelling-campaign-map skill from scratch:
   - seeds: girlville_data.py (sourceless path — Poisson-disc sampling with
     greedy nearest-anchor assignment to authorial anchors; the survey output
     is already committed and the geography approved, so seeds are kept)
-  - finite Voronoi (cloud-center sign rule) clipped to the 17x11 canvas
+  - fractal jittered Voronoi boundaries (skill step 3a, Boris the Brave):
+    region ownership rasterized at render resolution; the typed graph is
+    derived from that same raster, so picture and graph agree
   - typed multiplex graph G = (V, E_A, E_F, E_C) via the skill's
     bin/graph_model.py -> maps/girlville-graph.json
   - E_C is authored, not derived: Girlville has no portals or convoy routes
@@ -13,7 +15,7 @@ Applies the current schelling-campaign-map skill from scratch:
 
 Ink-friendly (the reader prints on an inkjet): white background, thin
 ice-blue borders, dark slate labels. Wild regions get a very light tint;
-waypoints are dashed gray: neutral, unclaimed, never quest hosts.
+waypoints stay neutral white: unclaimed, never quest hosts.
 
 Markers sit EXACTLY at their seeds, never at cell centroids.
 Labels follow ONE uniform rule (no hand-tuned per-label offsets): centered
@@ -28,13 +30,12 @@ import os
 import sys
 
 import numpy as np
-from scipy.spatial import Voronoi
+from scipy.ndimage import binary_dilation
 
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import matplotlib.patheffects as patheffects
-from matplotlib.patches import Polygon
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
@@ -53,6 +54,9 @@ from graph_model import (  # noqa: E402
     SpaceType, CampaignRole, DiplomacyMultiplexGraph,
     Node, derive_layers, split_coasts, to_json,
 )
+from fractal_voronoi import (  # noqa: E402
+    FractalPartition, adjacency_from_grid,
+)
 
 OUT_DIR = os.path.join(HERE, "maps")
 OUT_PNG = os.path.join(OUT_DIR, "girlville-frost-kingdom.png")
@@ -60,11 +64,22 @@ OUT_JSON = os.path.join(OUT_DIR, "girlville-summary.json")
 OUT_GRAPH = os.path.join(OUT_DIR, "girlville-graph.json")
 OUT_POWERS = os.path.join(OUT_DIR, "girlville-powers.json")
 
-# Spread: 17 x 11 in @ 300 dpi (5100 x 3300 px). Data units are inches.
+# Spread: 17 x 13.14 in @ 300 dpi (5100 x 3941 px). Data units are inches.
 # Spread-filling aspect: the map spans two half-letter pages (11 x 8.5),
 # so the canvas keeps that exact ratio (17 wide -> 17*8.5/11 tall).
 FIG_W, FIG_H, DPI = 17, 17 * 8.5 / 11, 300
 CANVAS_W, CANVAS_H = 17.0, 17.0 * 8.5 / 11
+# NOTE: int(), not round() — the saved figure is 5100x3940, so the raster
+# must match the figure's real pixel grid 1:1.
+PX_W, PX_H = int(FIG_W * DPI), int(FIG_H * DPI)
+
+# ---- fractal boundaries (skill step 3a, opt-in) ----
+# Organic, coastline-like borders instead of straight Voronoi edges.
+# depth=7: visible jaggedness at every scale; rng_seed re-rolls the borders
+# without moving a single seed (deterministic for fixed inputs).
+FRACTAL_DEPTH = 7
+FRACTAL_SEED = 7
+BORDER_PX = 9  # border width in raster pixels (~2.2pt at 300dpi)
 
 ICE = "#9db8cc"      # region borders
 SLATE = "#2b3a4a"    # labels
@@ -96,78 +111,31 @@ MARKER_MS = {"supply": 12, "wild": 19, "waypoint": 10}
 SEA_NAMES = {"The Sewers"}
 
 
-def voronoi_finite_polygons_2d(vor, radius=None):
-    """Finite Voronoi regions. Outward normal uses the cloud-center sign rule:
-    sign(dot(ridge midpoint - cloud center, normal)) x normal.
-    (midpoint-minus-seed is perpendicular to the normal and silently wrong.)
+def _rgb8(hexcolor):
+    """matplotlib color -> (r, g, b) uint8 triple."""
+    return tuple(int(round(v * 255))
+                 for v in matplotlib.colors.to_rgb(hexcolor))
+
+
+_partition_cache = {}
+
+
+def get_partition():
+    """FractalPartition ownership raster, computed once per process.
+
+    The render AND the typed graph both derive from this same raster,
+    so the picture and the graph agree by construction (skill rule).
+    Row 0 is the top (y=0); values are seed indices.
     """
-    if vor.points.shape[1] != 2:
-        raise ValueError("Requires 2D input")
-    new_regions = []
-    new_vertices = vor.vertices.tolist()
-    center = vor.points.mean(axis=0)
-    if radius is None:
-        radius = vor.points.ptp().max() * 2
-    all_ridges = {}
-    for (p1, p2), (v1, v2) in zip(vor.ridge_points, vor.ridge_vertices):
-        all_ridges.setdefault(p1, []).append((p2, v1, v2))
-        all_ridges.setdefault(p2, []).append((p1, v1, v2))
-    for p1, region in enumerate(vor.point_region):
-        vertices = vor.regions[region]
-        if all(v >= 0 for v in vertices):
-            new_regions.append(vertices)
-            continue
-        ridges = all_ridges[p1]
-        new_region = [v for v in vertices if v >= 0]
-        for p2, v1, v2 in ridges:
-            if v2 < 0:
-                v1, v2 = v2, v1
-            if v1 >= 0:
-                continue  # finite ridge already in the region
-            t = vor.points[p2] - vor.points[p1]
-            t /= np.linalg.norm(t)
-            n = np.array([-t[1], t[0]])
-            midpoint = (vor.points[p1] + vor.points[p2]) / 2
-            n = np.sign(np.dot(midpoint - center, n)) * n  # cloud-center sign rule
-            far_point = vor.vertices[v2] + n * radius
-            new_region.append(len(new_vertices))
-            new_vertices.append(far_point.tolist())
-        vs = np.asarray([new_vertices[v] for v in new_region])
-        c = vs.mean(axis=0)
-        angles = np.arctan2(vs[:, 1] - c[1], vs[:, 0] - c[0])
-        new_region = np.array(new_region)[np.argsort(angles)]
-        new_regions.append(new_region.tolist())
-    return new_regions, np.asarray(new_vertices)
-
-
-def clip_to_rect(poly, w, h):
-    """Sutherland-Hodgman clip against [0,w]x[0,h]."""
-    def inside(p, edge):
-        x, y = p
-        return (x >= 0 if edge == "left" else
-                x <= w if edge == "right" else
-                y >= 0 if edge == "bottom" else y <= h)
-    def intersect(p1, p2, edge):
-        x1, y1 = p1; x2, y2 = p2
-        if edge == "left":   t = (0 - x1) / (x2 - x1); return (0.0, y1 + t * (y2 - y1))
-        if edge == "right":  t = (w - x1) / (x2 - x1); return (float(w), y1 + t * (y2 - y1))
-        if edge == "bottom": t = (0 - y1) / (y2 - y1); return (x1 + t * (x2 - x1), 0.0)
-        t = (h - y1) / (y2 - y1); return (x1 + t * (x2 - x1), float(h))
-    out = [tuple(p) for p in poly]
-    for edge in ("left", "right", "bottom", "top"):
-        inp, out = out, []
-        if not inp:
-            break
-        s = inp[-1]
-        for p in inp:
-            if inside(p, edge):
-                if not inside(s, edge):
-                    out.append(intersect(s, p, edge))
-                out.append(p)
-            elif inside(s, edge):
-                out.append(intersect(s, p, edge))
-            s = p
-    return np.asarray(out)
+    if "grid" not in _partition_cache:
+        fp = FractalPartition(seed_xy(), (CANVAS_W, CANVAS_H),
+                              depth=FRACTAL_DEPTH, rng_seed=FRACTAL_SEED)
+        bad = fp.check_seeds_self()
+        if bad:
+            raise RuntimeError(
+                "fractal seeds do not own their location: %r" % (bad,))
+        _partition_cache["grid"] = fp.rasterize(PX_W, PX_H).astype(np.int32)
+    return _partition_cache["grid"]
 
 
 def seed_xy():
@@ -179,33 +147,35 @@ def seed_xy():
 def build_figure():
     """Build the map figure. Returns (fig, ax, texts, xy)."""
     xy = seed_xy()
-    vor = Voronoi(xy)
-    regions, vertices = voronoi_finite_polygons_2d(vor)
 
     fig = plt.figure(figsize=(FIG_W, FIG_H), dpi=DPI)
     fig.patch.set_facecolor("white")
-    # True full bleed: the Voronoi fills the entire 17x11 figure, edge to edge.
-    # Title, legend, and power key ride ON the map, haloed for legibility.
+    # True full bleed: the fractal partition fills the entire figure,
+    # edge to edge. Title, legend, and power key ride ON the map,
+    # haloed for legibility.
     ax = fig.add_axes([0, 0, 1, 1])
     ax.set_facecolor("white")
 
-    # Region cells: supply centers wear their great power's color;
-    # wilds keep the wild tint; waypoints stay neutral white.
-    for s, region in zip(SEEDS, regions):
-        poly = clip_to_rect(vertices[region], CANVAS_W, CANVAS_H)
-        if len(poly) < 3:
-            continue
+    # Region cells, painted straight from the ownership raster
+    # (row 0 = top, y=0): supply centers wear their great power's color;
+    # wilds keep the wild tint; waypoints stay neutral white. Borders are
+    # the dilated boundary mask in ice-blue — the same raster the typed
+    # graph derives from, so picture and graph agree.
+    grid = get_partition()
+    fills = np.empty((len(SEEDS), 3), dtype=np.uint8)
+    for i, s in enumerate(SEEDS):
         if s["kind"] == "wild":
-            ax.add_patch(Polygon(poly, closed=True, facecolor=WILD_TINT,
-                                 edgecolor=ICE, linewidth=1.75, zorder=1))
+            fills[i] = _rgb8(WILD_TINT)
         elif s["kind"] == "waypoint":
-            ax.add_patch(Polygon(poly, closed=True, facecolor="white",
-                                 edgecolor=WAY_C, linewidth=1.4,
-                                 linestyle=(0, (7, 5)), zorder=1))
+            fills[i] = (255, 255, 255)
         else:
-            ax.add_patch(Polygon(poly, closed=True,
-                                 facecolor=REGION_POWER[s["name"]]["color"],
-                                 edgecolor=ICE, linewidth=1.75, zorder=1))
+            fills[i] = _rgb8(REGION_POWER[s["name"]]["color"])
+    rgb = fills[grid]
+    bmask = binary_dilation(FractalPartition.boundary_mask(grid),
+                            iterations=BORDER_PX // 2)
+    rgb[bmask] = _rgb8(ICE)
+    ax.imshow(rgb, extent=[0, CANVAS_W, CANVAS_H, 0], origin="upper",
+              interpolation="nearest", zorder=0)
 
     # Markers EXACTLY at the seeds + uniform labels (centered below marker)
     texts = []
@@ -310,16 +280,17 @@ def get_label_bboxes():
 
 
 def build_graph():
-    """Typed multiplex graph G = (V, E_A, E_F, E_C) from the Voronoi.
+    """Typed multiplex graph G = (V, E_A, E_F, E_C) from the fractal raster.
 
-    Raw adjacency = shared Voronoi borders (ridge_points). E_A: borders
-    between non-sea cells. E_F: borders touching a sea cell. E_C: authored
-    only — Girlville has no portals/convoy routes yet, so it stays empty.
+    Raw adjacency = shared fractal borders, read off the SAME raster the
+    render paints (skill rule: the graph and the picture must agree).
+    E_A: borders between non-sea cells. E_F: borders touching a sea cell.
+    E_C: authored only — Girlville has no portals/convoy routes yet, so it
+    stays empty.
     """
-    xy = seed_xy()
-    vor = Voronoi(xy)
     names = [s["name"] for s in SEEDS]
-    borders = [(names[i], names[j]) for i, j in vor.ridge_points]
+    borders = [(names[i], names[j])
+               for i, j in sorted(adjacency_from_grid(get_partition()))]
 
     adj = {n: set() for n in names}
     for a, b in borders:
