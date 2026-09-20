@@ -184,3 +184,49 @@ SEEDS = [
 ]
 
 del _rng, _candidates, _assigned
+
+# The seven great powers: princely blocs dividing the sixteen supply centers.
+# Every supply center is claimed by exactly one power; wilds/waters are
+# unclaimed; waypoints are neutral and unclaimable. Three princes stand
+# outside the seven: Corvin Snowmere (married the Blizzard — consort of the
+# Doom Pool), Larkspur Vell (Waymeet's disappointment), Wren of Nowhere
+# (nobody's ex; shows up anyway).
+GREAT_POWERS = [
+    dict(name="The Coronet", short="The Coronet",
+         princes=["Prince Cassian the Coronet-Thief"],
+         color="#F3E5C0",  # champagne gold
+         regions=["The Coronet", "Crystal Ballroom", "Frostgate"]),
+    dict(name="The Glyph-Archive", short="Glyph-Archive",
+         princes=["Prince Anselm of the Seventh Glyph"],
+         color="#DDD9F2",  # periwinkle
+         regions=["The Glyph-Archive", "The Grand Frost Ballroom",
+                  "The Coven Below the Frost"]),
+    dict(name="Federwald", short="Federwald",
+         princes=["Prince Milo Ravensent"],
+         color="#D7E8D4",  # sage
+         regions=["Federwald", "Snow fortress"]),
+    dict(name="The Glimm\u014dr Compact", short="Glimm\u014dr",
+         princes=["Prince Dorian Glimm\u014dr", "Prince Jaspar Makeout"],
+         color="#F6DCC8",  # apricot
+         regions=["Mines of Glimm\u014dr", "Makeout Forge"]),
+    dict(name="Underthrone", short="Underthrone",
+         princes=["Prince Fenwick Underthrone"],
+         color="#E0D8CE",  # warm stone
+         regions=["Underthrone"]),
+    dict(name="Runewick", short="Runewick",
+         princes=["Prince Halloran Frostbane", "Prince Sable Mor"],
+         color="#CFE4F3",  # ice blue
+         regions=["Runewick", "Sable"]),
+    dict(name="The Lacy Shadows", short="Lacy Shadows",
+         princes=["Prince Ivo Lacehand"],
+         color="#EED5DE",  # blush rose
+         regions=["Lacefield", "Guild of Lacy Shadows", "The Old Ballroom"]),
+]
+
+_claimed = [r for p in GREAT_POWERS for r in p["regions"]]
+_supply = [n for n, k, _, _ in REGIONS if k == "supply"]
+if sorted(_claimed) != sorted(_supply):
+    raise RuntimeError(
+        "Great powers must partition the supply centers exactly: "
+        f"claimed={len(_claimed)} supply={len(_supply)}")
+del _claimed, _supply
