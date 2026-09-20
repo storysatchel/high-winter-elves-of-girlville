@@ -8,151 +8,176 @@
       "name": "Frostgate",
       "kind": "supply",
       "fx": 0.0772,
-      "fy": 0.4238
+      "fy": 0.4238,
+      "power": "The Coronet"
     },
     {
       "name": "Mines of Glimmōr",
       "kind": "supply",
       "fx": 0.2363,
-      "fy": 0.5642
+      "fy": 0.5642,
+      "power": "The Glimmōr Compact"
     },
     {
       "name": "Crystal Ballroom",
       "kind": "supply",
       "fx": 0.6926,
-      "fy": 0.3796
+      "fy": 0.3796,
+      "power": "The Coronet"
     },
     {
       "name": "The Old Ballroom",
       "kind": "supply",
       "fx": 0.8563,
-      "fy": 0.5405
+      "fy": 0.5405,
+      "power": "The Lacy Shadows"
     },
     {
       "name": "Makeout Forge",
       "kind": "supply",
       "fx": 0.4358,
-      "fy": 0.8639
+      "fy": 0.8639,
+      "power": "The Glimmōr Compact"
     },
     {
       "name": "Guild of Lacy Shadows",
       "kind": "supply",
       "fx": 0.6694,
-      "fy": 0.6253
+      "fy": 0.6253,
+      "power": "The Lacy Shadows"
     },
     {
       "name": "The Coven Below the Frost",
       "kind": "supply",
       "fx": 0.6583,
-      "fy": 0.2351
+      "fy": 0.2351,
+      "power": "The Glyph-Archive"
     },
     {
       "name": "The Glyph-Archive",
       "kind": "supply",
       "fx": 0.3528,
-      "fy": 0.355
+      "fy": 0.355,
+      "power": "The Glyph-Archive"
     },
     {
       "name": "The Grand Frost Ballroom",
       "kind": "supply",
       "fx": 0.4848,
-      "fy": 0.1791
+      "fy": 0.1791,
+      "power": "The Glyph-Archive"
     },
     {
       "name": "Underthrone",
       "kind": "supply",
       "fx": 0.4695,
-      "fy": 0.6793
+      "fy": 0.6793,
+      "power": "Underthrone"
     },
     {
       "name": "Federwald",
       "kind": "supply",
       "fx": 0.1114,
-      "fy": 0.3356
+      "fy": 0.3356,
+      "power": "Federwald"
     },
     {
       "name": "Runewick",
       "kind": "supply",
       "fx": 0.8486,
-      "fy": 0.2012
+      "fy": 0.2012,
+      "power": "Runewick"
     },
     {
       "name": "Lacefield",
       "kind": "supply",
       "fx": 0.8166,
-      "fy": 0.6612
+      "fy": 0.6612,
+      "power": "The Lacy Shadows"
     },
     {
       "name": "Sable",
       "kind": "supply",
       "fx": 0.7418,
-      "fy": 0.1456
+      "fy": 0.1456,
+      "power": "Runewick"
     },
     {
       "name": "The Coronet",
       "kind": "supply",
       "fx": 0.9211,
-      "fy": 0.8872
+      "fy": 0.8872,
+      "power": "The Coronet"
     },
     {
       "name": "Snow fortress",
       "kind": "supply",
       "fx": 0.3116,
-      "fy": 0.7936
+      "fy": 0.7936,
+      "power": "Federwald"
     },
     {
       "name": "The Blizzard",
       "kind": "wild",
       "fx": 0.5364,
-      "fy": 0.0657
+      "fy": 0.0657,
+      "power": null
     },
     {
       "name": "The Deep Dark",
       "kind": "wild",
       "fx": 0.196,
-      "fy": 0.0952
+      "fy": 0.0952,
+      "power": null
     },
     {
       "name": "Glamwendia",
       "kind": "wild",
       "fx": 0.4627,
-      "fy": 0.4359
+      "fy": 0.4359,
+      "power": null
     },
     {
       "name": "Snowmere",
       "kind": "wild",
       "fx": 0.8811,
-      "fy": 0.456
+      "fy": 0.456,
+      "power": null
     },
     {
       "name": "Nowhere",
       "kind": "wild",
       "fx": 0.3427,
-      "fy": 0.6775
+      "fy": 0.6775,
+      "power": null
     },
     {
       "name": "The Sewers",
       "kind": "wild",
       "fx": 0.5019,
-      "fy": 0.5885
+      "fy": 0.5885,
+      "power": null
     },
     {
       "name": "Frost dungeon",
       "kind": "waypoint",
       "fx": 0.5896,
-      "fy": 0.7934
+      "fy": 0.7934,
+      "power": null
     },
     {
       "name": "Dance club",
       "kind": "waypoint",
       "fx": 0.6229,
-      "fy": 0.5354
+      "fy": 0.5354,
+      "power": null
     },
     {
       "name": "Waymeet",
       "kind": "waypoint",
       "fx": 0.0793,
-      "fy": 0.6514
+      "fy": 0.6514,
+      "power": null
     }
   ]
 }
