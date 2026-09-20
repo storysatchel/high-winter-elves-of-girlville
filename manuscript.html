@@ -42,6 +42,8 @@
   @page :first { margin: 0; @bottom-center { content: none; } }
   @page backcoverpage { margin: 0; @bottom-center { content: none; } }
   .backcover { page: backcoverpage; }
+  @page blankpage { @bottom-center { content: none; } }
+  .blankpage { page: blankpage; break-before: page; }
   html, body { margin: 0; padding: 0; }
   body {
     font-family: "Gelasio", Georgia, serif;
@@ -1259,6 +1261,11 @@ all this. <span class="ptags"><b>Rot</b> hangs thick; <b>Ice</b> hangs thin.</sp
 <p class="small">Waymeet, the frost dungeons, and the dance clubs dotting
 the borders are neutral ground — no one holds them, everyone bleeds in
 them.</p>
+
+
+<!-- ================= BLANK LEAVES ================= -->
+<div class="blankpage">&nbsp;</div>
+<div class="blankpage">&nbsp;</div>
 
 
 <!-- ================= BACK COVER ================= -->
