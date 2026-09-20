@@ -37,7 +37,13 @@ from matplotlib.patches import Polygon
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from girlville_data import SEEDS  # noqa: E402
+from girlville_data import SEEDS, GREAT_POWERS  # noqa: E402
+
+REGION_POWER = {}
+for _p in GREAT_POWERS:
+    for _r in _p["regions"]:
+        REGION_POWER[_r] = _p
+del _p, _r
 
 SKILL_BIN = os.path.join(os.path.dirname(HERE), "skills",
                          "schelling-campaign-map", "bin")
@@ -51,6 +57,7 @@ OUT_DIR = os.path.join(HERE, "maps")
 OUT_PNG = os.path.join(OUT_DIR, "girlville-frost-kingdom.png")
 OUT_JSON = os.path.join(OUT_DIR, "girlville-summary.json")
 OUT_GRAPH = os.path.join(OUT_DIR, "girlville-graph.json")
+OUT_POWERS = os.path.join(OUT_DIR, "girlville-powers.json")
 
 # Spread: 17 x 11 in @ 300 dpi (5100 x 3300 px). Data units are inches.
 FIG_W, FIG_H, DPI = 17, 11, 300
@@ -178,7 +185,8 @@ def build_figure():
     ax = fig.add_axes([0.10, 0.09, 0.80, 0.80])
     ax.set_facecolor("white")
 
-    # Region cells
+    # Region cells: supply centers wear their great power's color;
+    # wilds keep the wild tint; waypoints stay neutral white.
     for s, region in zip(SEEDS, regions):
         poly = clip_to_rect(vertices[region], CANVAS_W, CANVAS_H)
         if len(poly) < 3:
@@ -191,7 +199,8 @@ def build_figure():
                                  edgecolor=WAY_C, linewidth=1.4,
                                  linestyle=(0, (7, 5)), zorder=1))
         else:
-            ax.add_patch(Polygon(poly, closed=True, facecolor="white",
+            ax.add_patch(Polygon(poly, closed=True,
+                                 facecolor=REGION_POWER[s["name"]]["color"],
                                  edgecolor=ICE, linewidth=1.75, zorder=1))
 
     # Markers EXACTLY at the seeds + uniform labels (centered below marker)
@@ -231,9 +240,17 @@ def build_figure():
     fig.text(0.5, 0.945, "The Frost Kingdom of Girlville",
              fontsize=40, color=SLATE, ha="center", va="center",
              family="serif", weight="bold")
-    fig.text(0.5, 0.04, "\u25c6 \u2014 supply  \u00b7  \u2605 \u2014 wild  \u00b7  \u25cb \u2014 neutral ground",
+    fig.text(0.5, 0.058, "\u25c6 \u2014 supply  \u00b7  \u2605 \u2014 wild  \u00b7  \u25cb \u2014 neutral ground",
              fontsize=24, color=WAY_C, ha="center", va="center",
              family="DejaVu Sans")
+    # Great-power key: one swatch + name per power, slotted across the foot.
+    for i, p in enumerate(GREAT_POWERS):
+        _x = 0.035 + i * (0.93 / 7)
+        fig.text(_x, 0.02, "\u25a0", fontsize=16, color=p["color"],
+                 ha="left", va="center", family="DejaVu Sans")
+        fig.text(_x + 0.016, 0.02, p["short"], fontsize=16, color=SLATE,
+                 ha="left", va="center", family="DejaVu Sans")
+    del i, p, _x
 
     return fig, ax, texts, xy
 
@@ -331,10 +348,19 @@ def render():
     summary = {"canvas_inches": [FIG_W, FIG_H],
                "regions": [
                    {"name": s["name"], "kind": s["kind"],
-                    "fx": s["fx"], "fy": s["fy"]}
+                    "fx": s["fx"], "fy": s["fy"],
+                    "power": (REGION_POWER[s["name"]]["name"]
+                              if s["kind"] == "supply" else None)}
                    for s in SEEDS]}
     with open(OUT_JSON, "w", encoding="utf-8") as f:
         json.dump(summary, f, indent=2, ensure_ascii=False)
+
+    powers = [{"name": p["name"], "short": p["short"],
+               "princes": p["princes"], "color": p["color"],
+               "regions": p["regions"]} for p in GREAT_POWERS]
+    with open(OUT_POWERS, "w", encoding="utf-8") as f:
+        json.dump(powers, f, indent=2, ensure_ascii=False)
+    print(f"wrote {OUT_POWERS} ({len(powers)} great powers)")
 
     graph = build_graph()
     with open(OUT_GRAPH, "w", encoding="utf-8") as f:
