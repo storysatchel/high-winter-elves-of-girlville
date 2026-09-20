@@ -1,0 +1,90 @@
+[
+  {
+    "name": "The Coronet",
+    "short": "The Coronet",
+    "princes": [
+      "Prince Cassian the Coronet-Thief"
+    ],
+    "color": "#F3E5C0",
+    "regions": [
+      "The Coronet",
+      "Crystal Ballroom",
+      "Frostgate"
+    ]
+  },
+  {
+    "name": "The Glyph-Archive",
+    "short": "Glyph-Archive",
+    "princes": [
+      "Prince Anselm of the Seventh Glyph"
+    ],
+    "color": "#DDD9F2",
+    "regions": [
+      "The Glyph-Archive",
+      "The Grand Frost Ballroom",
+      "The Coven Below the Frost"
+    ]
+  },
+  {
+    "name": "Federwald",
+    "short": "Federwald",
+    "princes": [
+      "Prince Milo Ravensent"
+    ],
+    "color": "#D7E8D4",
+    "regions": [
+      "Federwald",
+      "Snow fortress"
+    ]
+  },
+  {
+    "name": "The Glimmōr Compact",
+    "short": "Glimmōr",
+    "princes": [
+      "Prince Dorian Glimmōr",
+      "Prince Jaspar Makeout"
+    ],
+    "color": "#F6DCC8",
+    "regions": [
+      "Mines of Glimmōr",
+      "Makeout Forge"
+    ]
+  },
+  {
+    "name": "Underthrone",
+    "short": "Underthrone",
+    "princes": [
+      "Prince Fenwick Underthrone"
+    ],
+    "color": "#E0D8CE",
+    "regions": [
+      "Underthrone"
+    ]
+  },
+  {
+    "name": "Runewick",
+    "short": "Runewick",
+    "princes": [
+      "Prince Halloran Frostbane",
+      "Prince Sable Mor"
+    ],
+    "color": "#CFE4F3",
+    "regions": [
+      "Runewick",
+      "Sable"
+    ]
+  },
+  {
+    "name": "The Lacy Shadows",
+    "short": "Lacy Shadows",
+    "princes": [
+      "Prince Ivo Lacehand"
+    ],
+    "color": "#EED5DE",
+    "regions": [
+      "Lacefield",
+      "Guild of Lacy Shadows",
+      "The Old Ballroom"
+    ]
+  }
+]
