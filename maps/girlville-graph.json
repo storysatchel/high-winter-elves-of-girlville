@@ -358,63 +358,15 @@
  },
  "army_edges": [
   {
-   "source_id": "Runewick",
-   "target_id": "Sable",
+   "source_id": "Frostgate",
+   "target_id": "Mines of Glimm\u014dr",
    "layer": "E_A",
    "is_active": true,
    "traversal_cost": 1,
    "conditions": null
   },
   {
-   "source_id": "Runewick",
-   "target_id": "Crystal Ballroom",
-   "layer": "E_A",
-   "is_active": true,
-   "traversal_cost": 1,
-   "conditions": null
-  },
-  {
-   "source_id": "Runewick",
-   "target_id": "Snowmere",
-   "layer": "E_A",
-   "is_active": true,
-   "traversal_cost": 1,
-   "conditions": null
-  },
-  {
-   "source_id": "The Deep Dark",
-   "target_id": "Frostgate",
-   "layer": "E_A",
-   "is_active": true,
-   "traversal_cost": 1,
-   "conditions": null
-  },
-  {
-   "source_id": "The Deep Dark",
-   "target_id": "The Blizzard",
-   "layer": "E_A",
-   "is_active": true,
-   "traversal_cost": 1,
-   "conditions": null
-  },
-  {
-   "source_id": "The Deep Dark",
-   "target_id": "The Grand Frost Ballroom",
-   "layer": "E_A",
-   "is_active": true,
-   "traversal_cost": 1,
-   "conditions": null
-  },
-  {
-   "source_id": "The Deep Dark",
-   "target_id": "The Glyph-Archive",
-   "layer": "E_A",
-   "is_active": true,
-   "traversal_cost": 1,
-   "conditions": null
-  },
-  {
-   "source_id": "The Deep Dark",
+   "source_id": "Frostgate",
    "target_id": "Federwald",
    "layer": "E_A",
    "is_active": true,
@@ -430,23 +382,7 @@
    "conditions": null
   },
   {
-   "source_id": "Frostgate",
-   "target_id": "Federwald",
-   "layer": "E_A",
-   "is_active": true,
-   "traversal_cost": 1,
-   "conditions": null
-  },
-  {
-   "source_id": "Frostgate",
-   "target_id": "Mines of Glimm\u014dr",
-   "layer": "E_A",
-   "is_active": true,
-   "traversal_cost": 1,
-   "conditions": null
-  },
-  {
-   "source_id": "Federwald",
+   "source_id": "Mines of Glimm\u014dr",
    "target_id": "The Glyph-Archive",
    "layer": "E_A",
    "is_active": true,
@@ -454,8 +390,104 @@
    "conditions": null
   },
   {
-   "source_id": "Federwald",
-   "target_id": "Mines of Glimm\u014dr",
+   "source_id": "Mines of Glimm\u014dr",
+   "target_id": "Federwald",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Mines of Glimm\u014dr",
+   "target_id": "Snow fortress",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Mines of Glimm\u014dr",
+   "target_id": "Nowhere",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Mines of Glimm\u014dr",
+   "target_id": "Waymeet",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Crystal Ballroom",
+   "target_id": "The Old Ballroom",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Crystal Ballroom",
+   "target_id": "The Coven Below the Frost",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Crystal Ballroom",
+   "target_id": "Runewick",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Crystal Ballroom",
+   "target_id": "Glamwendia",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Crystal Ballroom",
+   "target_id": "Snowmere",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Crystal Ballroom",
+   "target_id": "Dance club",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "The Old Ballroom",
+   "target_id": "Guild of Lacy Shadows",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "The Old Ballroom",
+   "target_id": "Lacefield",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "The Old Ballroom",
+   "target_id": "The Coronet",
    "layer": "E_A",
    "is_active": true,
    "traversal_cost": 1,
@@ -471,62 +503,14 @@
   },
   {
    "source_id": "The Old Ballroom",
-   "target_id": "Crystal Ballroom",
+   "target_id": "Dance club",
    "layer": "E_A",
    "is_active": true,
    "traversal_cost": 1,
    "conditions": null
   },
   {
-   "source_id": "The Old Ballroom",
-   "target_id": "Guild of Lacy Shadows",
-   "layer": "E_A",
-   "is_active": true,
-   "traversal_cost": 1,
-   "conditions": null
-  },
-  {
-   "source_id": "The Old Ballroom",
-   "target_id": "Lacefield",
-   "layer": "E_A",
-   "is_active": true,
-   "traversal_cost": 1,
-   "conditions": null
-  },
-  {
-   "source_id": "The Old Ballroom",
-   "target_id": "The Coronet",
-   "layer": "E_A",
-   "is_active": true,
-   "traversal_cost": 1,
-   "conditions": null
-  },
-  {
-   "source_id": "Snowmere",
-   "target_id": "Crystal Ballroom",
-   "layer": "E_A",
-   "is_active": true,
-   "traversal_cost": 1,
-   "conditions": null
-  },
-  {
-   "source_id": "Snowmere",
-   "target_id": "The Coronet",
-   "layer": "E_A",
-   "is_active": true,
-   "traversal_cost": 1,
-   "conditions": null
-  },
-  {
-   "source_id": "Frost dungeon",
-   "target_id": "Makeout Forge",
-   "layer": "E_A",
-   "is_active": true,
-   "traversal_cost": 1,
-   "conditions": null
-  },
-  {
-   "source_id": "Frost dungeon",
+   "source_id": "Makeout Forge",
    "target_id": "Underthrone",
    "layer": "E_A",
    "is_active": true,
@@ -534,88 +518,24 @@
    "conditions": null
   },
   {
-   "source_id": "Frost dungeon",
-   "target_id": "Guild of Lacy Shadows",
+   "source_id": "Makeout Forge",
+   "target_id": "Snow fortress",
    "layer": "E_A",
    "is_active": true,
    "traversal_cost": 1,
    "conditions": null
   },
   {
-   "source_id": "Frost dungeon",
-   "target_id": "The Coronet",
+   "source_id": "Makeout Forge",
+   "target_id": "Nowhere",
    "layer": "E_A",
    "is_active": true,
    "traversal_cost": 1,
    "conditions": null
   },
   {
-   "source_id": "Frost dungeon",
-   "target_id": "Lacefield",
-   "layer": "E_A",
-   "is_active": true,
-   "traversal_cost": 1,
-   "conditions": null
-  },
-  {
-   "source_id": "The Coronet",
-   "target_id": "Makeout Forge",
-   "layer": "E_A",
-   "is_active": true,
-   "traversal_cost": 1,
-   "conditions": null
-  },
-  {
-   "source_id": "The Coronet",
-   "target_id": "Lacefield",
-   "layer": "E_A",
-   "is_active": true,
-   "traversal_cost": 1,
-   "conditions": null
-  },
-  {
-   "source_id": "Lacefield",
-   "target_id": "Guild of Lacy Shadows",
-   "layer": "E_A",
-   "is_active": true,
-   "traversal_cost": 1,
-   "conditions": null
-  },
-  {
-   "source_id": "Sable",
-   "target_id": "The Blizzard",
-   "layer": "E_A",
-   "is_active": true,
-   "traversal_cost": 1,
-   "conditions": null
-  },
-  {
-   "source_id": "Sable",
-   "target_id": "Crystal Ballroom",
-   "layer": "E_A",
-   "is_active": true,
-   "traversal_cost": 1,
-   "conditions": null
-  },
-  {
-   "source_id": "Sable",
-   "target_id": "The Coven Below the Frost",
-   "layer": "E_A",
-   "is_active": true,
-   "traversal_cost": 1,
-   "conditions": null
-  },
-  {
-   "source_id": "The Blizzard",
-   "target_id": "The Grand Frost Ballroom",
-   "layer": "E_A",
-   "is_active": true,
-   "traversal_cost": 1,
-   "conditions": null
-  },
-  {
-   "source_id": "The Blizzard",
-   "target_id": "The Coven Below the Frost",
+   "source_id": "Makeout Forge",
+   "target_id": "Frost dungeon",
    "layer": "E_A",
    "is_active": true,
    "traversal_cost": 1,
@@ -623,7 +543,15 @@
   },
   {
    "source_id": "Guild of Lacy Shadows",
-   "target_id": "Crystal Ballroom",
+   "target_id": "Lacefield",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Guild of Lacy Shadows",
+   "target_id": "Frost dungeon",
    "layer": "E_A",
    "is_active": true,
    "traversal_cost": 1,
@@ -638,72 +566,32 @@
    "conditions": null
   },
   {
-   "source_id": "The Grand Frost Ballroom",
-   "target_id": "The Glyph-Archive",
+   "source_id": "The Coven Below the Frost",
+   "target_id": "The Grand Frost Ballroom",
    "layer": "E_A",
    "is_active": true,
    "traversal_cost": 1,
    "conditions": null
   },
   {
-   "source_id": "The Grand Frost Ballroom",
-   "target_id": "The Coven Below the Frost",
+   "source_id": "The Coven Below the Frost",
+   "target_id": "Runewick",
    "layer": "E_A",
    "is_active": true,
    "traversal_cost": 1,
    "conditions": null
   },
   {
-   "source_id": "The Grand Frost Ballroom",
-   "target_id": "Glamwendia",
+   "source_id": "The Coven Below the Frost",
+   "target_id": "Sable",
    "layer": "E_A",
    "is_active": true,
    "traversal_cost": 1,
    "conditions": null
   },
   {
-   "source_id": "The Glyph-Archive",
-   "target_id": "Mines of Glimm\u014dr",
-   "layer": "E_A",
-   "is_active": true,
-   "traversal_cost": 1,
-   "conditions": null
-  },
-  {
-   "source_id": "The Glyph-Archive",
-   "target_id": "Glamwendia",
-   "layer": "E_A",
-   "is_active": true,
-   "traversal_cost": 1,
-   "conditions": null
-  },
-  {
-   "source_id": "Dance club",
-   "target_id": "Crystal Ballroom",
-   "layer": "E_A",
-   "is_active": true,
-   "traversal_cost": 1,
-   "conditions": null
-  },
-  {
-   "source_id": "Dance club",
-   "target_id": "Glamwendia",
-   "layer": "E_A",
-   "is_active": true,
-   "traversal_cost": 1,
-   "conditions": null
-  },
-  {
-   "source_id": "Crystal Ballroom",
-   "target_id": "The Coven Below the Frost",
-   "layer": "E_A",
-   "is_active": true,
-   "traversal_cost": 1,
-   "conditions": null
-  },
-  {
-   "source_id": "Crystal Ballroom",
-   "target_id": "Glamwendia",
+   "source_id": "The Coven Below the Frost",
+   "target_id": "The Blizzard",
    "layer": "E_A",
    "is_active": true,
    "traversal_cost": 1,
@@ -718,8 +606,64 @@
    "conditions": null
   },
   {
-   "source_id": "Underthrone",
-   "target_id": "Makeout Forge",
+   "source_id": "The Glyph-Archive",
+   "target_id": "The Grand Frost Ballroom",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "The Glyph-Archive",
+   "target_id": "Federwald",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "The Glyph-Archive",
+   "target_id": "The Deep Dark",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "The Glyph-Archive",
+   "target_id": "Glamwendia",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "The Glyph-Archive",
+   "target_id": "Nowhere",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "The Grand Frost Ballroom",
+   "target_id": "The Blizzard",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "The Grand Frost Ballroom",
+   "target_id": "The Deep Dark",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "The Grand Frost Ballroom",
+   "target_id": "Glamwendia",
    "layer": "E_A",
    "is_active": true,
    "traversal_cost": 1,
@@ -734,16 +678,64 @@
    "conditions": null
   },
   {
-   "source_id": "Glamwendia",
-   "target_id": "Mines of Glimm\u014dr",
+   "source_id": "Underthrone",
+   "target_id": "Frost dungeon",
    "layer": "E_A",
    "is_active": true,
    "traversal_cost": 1,
    "conditions": null
   },
   {
-   "source_id": "Glamwendia",
-   "target_id": "Nowhere",
+   "source_id": "Federwald",
+   "target_id": "The Deep Dark",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Runewick",
+   "target_id": "Sable",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Runewick",
+   "target_id": "Snowmere",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Lacefield",
+   "target_id": "The Coronet",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Lacefield",
+   "target_id": "Frost dungeon",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Sable",
+   "target_id": "The Blizzard",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "The Coronet",
+   "target_id": "Frost dungeon",
    "layer": "E_A",
    "is_active": true,
    "traversal_cost": 1,
@@ -751,7 +743,7 @@
   },
   {
    "source_id": "Snow fortress",
-   "target_id": "Mines of Glimm\u014dr",
+   "target_id": "Nowhere",
    "layer": "E_A",
    "is_active": true,
    "traversal_cost": 1,
@@ -766,7 +758,15 @@
    "conditions": null
   },
   {
-   "source_id": "Snow fortress",
+   "source_id": "The Blizzard",
+   "target_id": "The Deep Dark",
+   "layer": "E_A",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Glamwendia",
    "target_id": "Nowhere",
    "layer": "E_A",
    "is_active": true,
@@ -774,32 +774,8 @@
    "conditions": null
   },
   {
-   "source_id": "Snow fortress",
-   "target_id": "Makeout Forge",
-   "layer": "E_A",
-   "is_active": true,
-   "traversal_cost": 1,
-   "conditions": null
-  },
-  {
-   "source_id": "Mines of Glimm\u014dr",
-   "target_id": "Waymeet",
-   "layer": "E_A",
-   "is_active": true,
-   "traversal_cost": 1,
-   "conditions": null
-  },
-  {
-   "source_id": "Mines of Glimm\u014dr",
-   "target_id": "Nowhere",
-   "layer": "E_A",
-   "is_active": true,
-   "traversal_cost": 1,
-   "conditions": null
-  },
-  {
-   "source_id": "Nowhere",
-   "target_id": "Makeout Forge",
+   "source_id": "Glamwendia",
+   "target_id": "Dance club",
    "layer": "E_A",
    "is_active": true,
    "traversal_cost": 1,
@@ -807,14 +783,6 @@
   }
  ],
  "fleet_edges": [
-  {
-   "source_id": "Frost dungeon",
-   "target_id": "The Sewers",
-   "layer": "E_F",
-   "is_active": true,
-   "traversal_cost": 1,
-   "conditions": null
-  },
   {
    "source_id": "Guild of Lacy Shadows",
    "target_id": "The Sewers",
@@ -824,14 +792,6 @@
    "conditions": null
   },
   {
-   "source_id": "Dance club",
-   "target_id": "The Sewers",
-   "layer": "E_F",
-   "is_active": true,
-   "traversal_cost": 1,
-   "conditions": null
-  },
-  {
    "source_id": "Underthrone",
    "target_id": "The Sewers",
    "layer": "E_F",
@@ -840,8 +800,16 @@
    "conditions": null
   },
   {
-   "source_id": "The Sewers",
-   "target_id": "Glamwendia",
+   "source_id": "Glamwendia",
+   "target_id": "The Sewers",
+   "layer": "E_F",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "Nowhere",
+   "target_id": "The Sewers",
    "layer": "E_F",
    "is_active": true,
    "traversal_cost": 1,
@@ -849,7 +817,15 @@
   },
   {
    "source_id": "The Sewers",
-   "target_id": "Nowhere",
+   "target_id": "Frost dungeon",
+   "layer": "E_F",
+   "is_active": true,
+   "traversal_cost": 1,
+   "conditions": null
+  },
+  {
+   "source_id": "The Sewers",
+   "target_id": "Dance club",
    "layer": "E_F",
    "is_active": true,
    "traversal_cost": 1,
