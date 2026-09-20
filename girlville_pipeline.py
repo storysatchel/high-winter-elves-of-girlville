@@ -61,8 +61,10 @@ OUT_GRAPH = os.path.join(OUT_DIR, "girlville-graph.json")
 OUT_POWERS = os.path.join(OUT_DIR, "girlville-powers.json")
 
 # Spread: 17 x 11 in @ 300 dpi (5100 x 3300 px). Data units are inches.
-FIG_W, FIG_H, DPI = 17, 11, 300
-CANVAS_W, CANVAS_H = 17.0, 11.0
+# Spread-filling aspect: the map spans two half-letter pages (11 x 8.5),
+# so the canvas keeps that exact ratio (17 wide -> 17*8.5/11 tall).
+FIG_W, FIG_H, DPI = 17, 17 * 8.5 / 11, 300
+CANVAS_W, CANVAS_H = 17.0, 17.0 * 8.5 / 11
 
 ICE = "#9db8cc"      # region borders
 SLATE = "#2b3a4a"    # labels
