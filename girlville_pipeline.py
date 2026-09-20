@@ -33,6 +33,7 @@ from scipy.spatial import Voronoi
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+import matplotlib.patheffects as patheffects
 from matplotlib.patches import Polygon
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -181,8 +182,9 @@ def build_figure():
 
     fig = plt.figure(figsize=(FIG_W, FIG_H), dpi=DPI)
     fig.patch.set_facecolor("white")
-    # Map rect matches the 17:11 canvas aspect; title above, legend below.
-    ax = fig.add_axes([0.10, 0.09, 0.80, 0.80])
+    # True full bleed: the Voronoi fills the entire 17x11 figure, edge to edge.
+    # Title, legend, and power key ride ON the map, haloed for legibility.
+    ax = fig.add_axes([0, 0, 1, 1])
     ax.set_facecolor("white")
 
     # Region cells: supply centers wear their great power's color;
@@ -236,20 +238,25 @@ def build_figure():
 
     _frame_clamp_labels(fig, ax, texts, xy)
 
-    # Title block (figure coordinates — clear of the map)
+    # Title, legend, and power key ride ON the map art, haloed for legibility.
+    def _halo(fs):
+        return [patheffects.withStroke(linewidth=max(2.5, fs / 6), foreground="white")]
+
     fig.text(0.5, 0.945, "The Frost Kingdom of Girlville",
-             fontsize=40, color=SLATE, ha="center", va="center",
-             family="serif", weight="bold")
+             fontsize=26, color=SLATE, ha="center", va="center",
+             family="serif", weight="bold", path_effects=_halo(26))
     fig.text(0.5, 0.058, "\u25c6 \u2014 supply  \u00b7  \u2605 \u2014 wild  \u00b7  \u25cb \u2014 neutral ground",
-             fontsize=24, color=WAY_C, ha="center", va="center",
-             family="DejaVu Sans")
+             fontsize=24, color=SLATE, ha="center", va="center",
+             family="DejaVu Sans", path_effects=_halo(24))
     # Great-power key: one swatch + name per power, slotted across the foot.
     for i, p in enumerate(GREAT_POWERS):
         _x = 0.035 + i * (0.93 / 7)
         fig.text(_x, 0.02, "\u25a0", fontsize=16, color=p["color"],
-                 ha="left", va="center", family="DejaVu Sans")
+                 ha="left", va="center", family="DejaVu Sans",
+                 path_effects=_halo(16))
         fig.text(_x + 0.016, 0.02, p["short"], fontsize=16, color=SLATE,
-                 ha="left", va="center", family="DejaVu Sans")
+                 ha="left", va="center", family="DejaVu Sans",
+                 path_effects=_halo(16))
     del i, p, _x
 
     return fig, ax, texts, xy
