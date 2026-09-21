@@ -136,10 +136,16 @@ jobs:
               writer.write(output)
           PY
 
+      - name: Render option mockups PDF
+        run: |
+          test -f mockups/girlville-option-mockups.html
+          weasyprint mockups/girlville-option-mockups.html dist/girlville-option-mockups.pdf
+
       - name: Check generated files
         run: |
           test -s dist/girlville-halfletter.pdf
           test -s dist/girlville-signatures.pdf
+          test -s dist/girlville-option-mockups.pdf
           ls -lh dist/*.pdf
 
       - name: Upload build artifact
@@ -197,7 +203,8 @@ jobs:
             --title "v${{ steps.semver.outputs.version }}" \
             --generate-notes \
             dist/girlville-halfletter.pdf \
-            dist/girlville-signatures.pdf
+            dist/girlville-signatures.pdf \
+            dist/girlville-option-mockups.pdf
 
       - name: Install butler (itch.io uploader)
         if: ${{ vars.ITCH_TARGET != '' }}
@@ -218,8 +225,10 @@ jobs:
             echo "BUTLER_API_KEY not configured; skipping itch.io publish."
             exit 0
           fi
-          mkdir -p /tmp/itch/reading /tmp/itch/print
+          mkdir -p /tmp/itch/reading /tmp/itch/print /tmp/itch/mockups
           cp dist/girlville-halfletter.pdf /tmp/itch/reading/
           cp dist/girlville-signatures.pdf /tmp/itch/print/
+          cp dist/girlville-option-mockups.pdf /tmp/itch/mockups/
           /tmp/butler/butler push /tmp/itch/reading "$ITCH_TARGET:pdf" --userversion "$RELEASE_TAG"
           /tmp/butler/butler push /tmp/itch/print "$ITCH_TARGET:print-pdf" --userversion "$RELEASE_TAG"
+          /tmp/butler/butler push /tmp/itch/mockups "$ITCH_TARGET:mockups" --userversion "$RELEASE_TAG"
