@@ -200,7 +200,7 @@ jobs:
             dist/girlville-signatures.pdf
 
       - name: Install butler (itch.io uploader)
-        if: vars.ITCH_TARGET != ''
+        if: ${{ vars.ITCH_TARGET != '' }}
         run: |
           curl -L -o /tmp/butler.zip https://broth.itch.zone/butler/linux-amd64/LATEST/archive/default
           unzip -o -q /tmp/butler.zip -d /tmp/butler
@@ -208,11 +208,11 @@ jobs:
           /tmp/butler/butler -V
 
       - name: Publish PDFs to itch.io
-        if: vars.ITCH_TARGET != '' && secrets.BUTLER_API_KEY != ''
+        if: ${{ vars.ITCH_TARGET != '' && secrets.BUTLER_API_KEY != '' }}
         env:
-          BUTLER_API_KEY: ${ secrets.BUTLER_API_KEY }
-          ITCH_TARGET: ${ vars.ITCH_TARGET }
-          RELEASE_TAG: v${ steps.semver.outputs.version }
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+          ITCH_TARGET: ${{ vars.ITCH_TARGET }}
+          RELEASE_TAG: v${{ steps.semver.outputs.version }}
         run: |
           mkdir -p /tmp/itch/reading /tmp/itch/print
           cp dist/girlville-halfletter.pdf /tmp/itch/reading/
