@@ -1,0 +1,599 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Girlville — Option Mockups</title><style>
+/* Shared design system for Girlville option mockups.
+   Extracted from manuscript.html (WeasyPrint, half-letter 5.5in x 8.5in).
+   WeasyPrint-safe: no multi-layer @page backgrounds, no takumi. */
+
+@font-face {
+  font-family: "Gelasio";
+  src: url("../fonts/Gelasio-Regular.ttf");
+}
+@font-face {
+  font-family: "Gelasio";
+  src: url("../fonts/Gelasio-Bold.ttf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Gelasio";
+  src: url("../fonts/Gelasio-Italic.ttf");
+  font-style: italic;
+}
+@font-face {
+  font-family: "Gelasio";
+  src: url("../fonts/Gelasio-BoldItalic.ttf");
+  font-weight: bold; font-style: italic;
+}
+@font-face {
+  font-family: "CortexSymbology";
+  src: url("../fonts/CortexSymbology-Regular_0_krkf.ttf");
+}
+.sym { font-family: "CortexSymbology"; font-size: 1.15em; vertical-align: -0.05em; }
+.die { font-family: "DejaVu Sans", sans-serif; font-weight: bold; color: #14324a; white-space: nowrap; }
+
+@page {
+  size: 5.5in 8.5in;
+  margin: 0.4in 0.5in 0.5in 0.5in;
+  @bottom-center {
+    content: "❄  " counter(page) "  ❄";
+    font-family: "DejaVu Sans", sans-serif;
+    font-size: 8pt;
+    color: #8fb6d4;
+    letter-spacing: 2pt;
+  }
+}
+@page :first { @bottom-center { content: "❄  mockup  ❄"; } }
+
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: "Gelasio", Georgia, serif;
+  font-size: 8.7pt;
+  line-height: 1.18;
+  color: #1c2733;
+}
+h1, h2, h3, h4 { font-family: "Gelasio", Georgia, serif; color: #14324a; }
+h2 { font-size: 12pt; margin: 4pt 0 4pt 0; page-break-after: avoid; }
+h2::before {
+  content: "✦  ";
+  font-family: "DejaVu Sans", sans-serif; font-size: 9pt; color: #c98aa8;
+}
+h2::after {
+  content: ""; display: block; height: 2.5pt; margin-top: 3pt;
+  background: linear-gradient(90deg, #2e6f9e 0%, #c98aa8 45%, #c7d6e4 80%, rgba(199,214,228,0) 100%);
+}
+h3 { font-size: 10pt; margin: 5pt 0 2pt 0; page-break-after: avoid; color: #1e4d6e; }
+h4 { font-size: 9.2pt; margin: 4pt 0 2pt 0; page-break-after: avoid; font-style: italic; color: #1e4d6e; }
+p { margin: 0 0 3pt 0; text-align: left; widows: 3; orphans: 3; }
+ul, ol { margin: 0 0 5pt 0; padding-left: 18pt; }
+li { margin-bottom: 1pt; }
+
+.glitterdiv {
+  font-family: "DejaVu Sans", sans-serif; font-size: 10pt; text-align: center;
+  letter-spacing: 6pt; text-indent: 6pt; margin: 6pt 0 0 0; color: #8fb6d4;
+  page-break-after: avoid;
+}
+.glitterdiv .r { color: #c98aa8; }
+
+/* Option label plate: which option this mockup is */
+.optlabel {
+  font-family: "DejaVu Sans", sans-serif; font-size: 7.5pt; letter-spacing: 2pt;
+  text-transform: uppercase; color: #8a3f66; text-align: center;
+  border: 1pt solid #c98aa8; padding: 3pt 6pt; margin: 0 0 6pt 0;
+  page-break-after: avoid;
+}
+
+/* Branch / power / talent cards */
+.card {
+  border: 1pt solid #c7d6e4; background: #f4f8fc;
+  padding: 4pt 6pt; margin: 0 0 4pt 0; page-break-inside: avoid;
+}
+.card h4 { margin: 0 0 1pt 0; font-style: normal; color: #14324a; font-size: 9.5pt; }
+.card .tags { font-size: 7.5pt; color: #5a748c; font-style: italic; margin-bottom: 2pt; }
+.card p { margin-bottom: 2pt; }
+.card p:last-child { margin-bottom: 0; }
+.card .sfx { color: #1e4d6e; }
+.card .limit { color: #8a3f66; }
+
+.sidebar {
+  border-left: 3pt solid #c98aa8;
+  background: #fff;
+  padding: 5pt 8pt; margin: 6pt 0; page-break-inside: avoid; font-size: 8.8pt;
+}
+.sidebar h4 { margin-top: 0; font-style: normal; color: #8a3f66; }
+.sidebar p:last-child { margin-bottom: 0; }
+
+.epigraph {
+  margin: 5pt 0 7pt 16pt; font-style: italic; page-break-inside: avoid;
+  font-size: 9pt; color: #33475c; border-left: 2pt solid #c7d6e4; padding-left: 8pt;
+}
+
+/* Character-sheet fragment */
+.sheetfrag {
+  border: 1.5pt solid #14324a; padding: 5pt 7pt; margin: 5pt 0;
+  font-size: 7.3pt; line-height: 1.25; color: #1c2733; page-break-inside: avoid;
+  background: #fff;
+}
+.sheetfrag .seclbl {
+  font-family: "DejaVu Sans", sans-serif; font-size: 7pt; text-transform: uppercase;
+  letter-spacing: 1.5pt; color: #8a3f66; margin: 3pt 0 2pt 0;
+  border-bottom: 0.75pt solid #d7e4f0; padding-bottom: 1pt;
+}
+.sheetfrag .srow { margin-bottom: 1.5pt; }
+.sheetfrag .lbl { font-weight: bold; color: #14324a; }
+.sheetfrag .fld { display: inline-block; border-bottom: 0.75pt solid #9db8d2; min-height: 8pt; vertical-align: bottom; min-width: 60pt; }
+.sheetfrag .hint { font-size: 6.8pt; color: #5a748c; font-style: italic; }
+
+table.spec { border-collapse: collapse; width: 100%; margin: 4pt 0 5pt 0; font-size: 8.4pt; }
+table.spec th {
+  font-family: "DejaVu Sans", sans-serif; font-size: 7pt; text-transform: uppercase;
+  letter-spacing: 1pt; color: #8a3f66; text-align: left;
+  border-bottom: 1pt solid #14324a; padding: 2pt 4pt;
+}
+table.spec td { border-bottom: 0.5pt solid #d7e4f0; padding: 2pt 4pt; vertical-align: top; }
+table.spec tr:last-child td { border-bottom: none; }
+
+.pagebreak { break-before: page; }
+.closer { text-align: center; font-style: italic; color: #8a3f66; margin-top: 8pt; }
+
+
+.titlepage { break-before: page; page-break-inside: avoid; text-align: center; padding-top: 2.5in; }
+.titlepage.first { break-before: auto; }
+.topplate { display: inline-block; font-family: "DejaVu Sans", sans-serif; font-size: 8pt;
+  letter-spacing: 3pt; text-transform: uppercase; color: #8a3f66;
+  border: 1pt solid #c98aa8; padding: 4pt 12pt; margin-bottom: 12pt; }
+.toptitle { font-size: 23pt; color: #14324a; margin: 0 0 8pt 0; font-weight: bold; }
+.topdesc { font-size: 10pt; color: #8a3f66; font-style: italic; margin: 0 0 14pt 0; }
+.mockupbody { break-before: page; }
+</style></head><body><div class="titlepage first"><div class="topplate">OPTION A</div><div class="toptitle">Careers as Distinctions</div><p class="topdesc">Rated <span class="die"><span class="sym">⑧</span></span> · choose two of three SFX · Hinder free</p><div class="glitterdiv">✦&nbsp;&nbsp;<span class="r">❄</span>&nbsp;&nbsp;✦</div></div><div class="mockupbody"><div class="optlabel">Option A · Careers as Distinctions</div>
+
+<h2>Careers</h2>
+
+<p>Your <b>Career</b> is one of your three Distinctions — rated <span class="die"><span class="sym">⑧</span></span>, Hinder free, like any other. Each career below offers <b>three authored SFX</b>; choose <b>two</b> at creation. The third is unlockable later with a Milestone. What you did for a living is who you are; the dice have finally stopped pretending otherwise.</p>
+
+<div class="card">
+<h4>Raider</h4>
+<div class="tags">Infiltration · Theft · Dungeon-crawling</div>
+<p>The Mines of Glimmōr are your second home. You go in quiet and come out rich, or loud and come out alive.</p>
+<ul>
+<li><b>Take the Shaft</b> — When you create an asset related to infiltration, theft, or escape, step it up.</li>
+<li><b>Glimmōr Native</b> — Spend a glitter die to step down a frost-dungeon or Mines complication affecting you.</li>
+<li><b>Sledgehammer Exit</b> — When you give in during a contest, gain an extra glitter die of any kind. You never leave empty-handed.</li>
+</ul>
+</div>
+
+<div class="card">
+<h4>Cryomancer</h4>
+<div class="tags">Ice-magic · Branches · The cold itself</div>
+<p>You read the weather the way other girls read texts. Your magic grows in branches, and you arrive at the prom already grown.</p>
+<ul>
+<li><b>Branch Scholar</b> — Begin with two Cryomancy branches, one at <span class="die"><span class="sym">⑧</span></span> and one at <span class="die"><span class="sym">⑥</span></span>.</li>
+<li><b>Cold Against Cold</b> — When a branch&rsquo;s tag matches a prince&rsquo;s <i>Undone by</i> tag, step up the effect die against him.</li>
+<li><b>Glyphwright</b> — Spend a glitter die to inscribe a branch glyph from memory; no need to find it carved somewhere first.</li>
+</ul>
+</div>
+
+<div class="card">
+<h4>Socialite</h4>
+<div class="tags">Courts · Dance clubs · The prom itself</div>
+<p>You know who wants what from whom before the first song ends. The room is your dungeon.</p>
+<ul>
+<li><b>Read the Room</b> — When you enter a dance club, court, or prom scene, ask two questions about who wants what from whom; the GM answers honestly.</li>
+<li><b>Never Miss a Step</b> — Accepting a hitch complication in a social scene grants an extra Charm glitter die.</li>
+<li><b>Grand Entrance</b> — Arriving mid-scene creates an <span class="die"><span class="sym">⑧</span></span> asset describing the impression you make.</li>
+</ul>
+</div>
+
+<div class="sidebar">
+<h4>Hinder, like any Distinction</h4>
+<p>Roll your Career as <span class="die"><span class="sym">④</span></span> instead of <span class="die"><span class="sym">⑧</span></span> and gain a glitter die. Failure is also a kind of entrance.</p>
+</div>
+
+<div class="pagebreak"></div>
+
+<div class="card">
+<h4>Witch</h4>
+<div class="tags">Rot-magic · The coven below</div>
+<p>The coven below the frost raised you. What rots, you rule.</p>
+<ul>
+<li><b>Rot Speaks</b> — Your Rotwork branches carry the Rot tag; when it matches a prince&rsquo;s <i>Undone by</i> tag, step up the effect die against him.</li>
+<li><b>Feed the Rot</b> — Once per scene, include a Glitter-touched (Festering) complication as if it were an asset.</li>
+<li><b>Glyph-Scarred</b> — Begin with two Rotwork branches, one at <span class="die"><span class="sym">⑧</span></span> and one at <span class="die"><span class="sym">⑥</span></span>. The scars were the lessons.</li>
+</ul>
+</div>
+
+<div class="card">
+<h4>Blade</h4>
+<div class="tags">Duels · Bodyguarding · Deniability</div>
+<p>Duels at dawn, bodyguarding after dark. The Mercenaries at Makeout Forge taught you the price of everything, and you charge it.</p>
+<ul>
+<li><b>Duelist</b> — Step up the effect die in an accepted formal duel.</li>
+<li><b>Bodyguard</b> — Spend a glitter die to take a complication intended for an ally.</li>
+<li><b>Ending Conversations</b> — When you enter an ongoing contest, step up your first action&rsquo;s effect die.</li>
+</ul>
+</div>
+
+<h2>Putting it on the sheet</h2>
+
+<ol>
+<li>Choose one of the five careers; write it as a Distinction at <span class="die"><span class="sym">⑧</span></span>.</li>
+<li>Choose two of its three SFX; write them beside it.</li>
+<li>The third SFX waits behind a Milestone — 5 XP to unlock, once the story has earned it.</li>
+</ol>
+
+<div class="sheetfrag">
+<div class="seclbl">Distinctions (fragment)</div>
+<div class="srow"><span class="lbl">Raider of the Glimmōr Mines</span> <span class="die"><span class="sym">⑧</span></span> — <i>Take the Shaft, Sledgehammer Exit</i></div>
+<div class="hint">Hinder free · third SFX (<i>Glimmōr Native</i>) unlockable via Milestone.</div>
+</div>
+
+<div class="sidebar">
+<h4>Why Distinctions</h4>
+<p>The cheapest restoration — every career package already exists, Hinder gives each career a built-in failure mode, and the die stays where the drama is.</p>
+</div>
+
+<p class="closer">There are no plot points in Girlville. There is only glitter.</p></div><div class="titlepage"><div class="topplate">OPTION B</div><div class="toptitle">Careers as Grouped Talents</div><p class="topdesc">Unrated packages of permission and knacks</p><div class="glitterdiv">✦&nbsp;&nbsp;<span class="r">❄</span>&nbsp;&nbsp;✦</div></div><div class="mockupbody"><div class="optlabel">Option B · Careers as Grouped Talents</div>
+
+<h2>Career Talents</h2>
+
+<p>Talents are unrated packages of narrative permission and SFX that accent your rated traits. A talent never adds a die to your pool — it changes what the dice you already roll are allowed to do. Talents may be grouped by profession, and Girlville has five such groups. Begin with <b>two talents</b>; one of them should be your career.</p>
+
+<div class="card">
+<h4>Raider</h4>
+<div class="tags">Infiltration · Theft · Dungeon-crawling</div>
+<p>The Mines of Glimmōr are your second home. You go in quiet and come out rich, or loud and come out alive.</p>
+<ul>
+<li><b>Take the Shaft</b> — When you create an asset related to infiltration, theft, or escape, step it up.</li>
+<li><b>Glimmōr Native</b> — Spend a glitter die to step down a frost-dungeon or Mines complication affecting you.</li>
+<li><b>Sledgehammer Exit</b> — When you give in during a contest, gain an extra glitter die of any kind. You never leave empty-handed.</li>
+</ul>
+</div>
+
+<div class="card">
+<h4>Cryomancer</h4>
+<div class="tags">Ice-magic · Branches</div>
+<p>You read the weather the way other girls read texts. Your magic grows in branches, and you arrive at the prom already grown.</p>
+<ul>
+<li><b>Branch Scholar</b> — Begin with two Cryomancy branches, one at <span class="die"><span class="sym">⑧</span></span> and one at <span class="die"><span class="sym">⑥</span></span>.</li>
+<li><b>Cold Against Cold</b> — When a branch&rsquo;s tag matches a prince&rsquo;s <i>Undone by</i> tag, step up the effect die against him.</li>
+<li><b>Glyphwright</b> — Spend a glitter die to inscribe a branch glyph from memory; no need to find it carved somewhere first.</li>
+</ul>
+</div>
+
+<div class="card">
+<h4>Socialite</h4>
+<div class="tags">Courts · Dance clubs</div>
+<p>You know who wants what from whom before the first song ends. The room is your dungeon.</p>
+<ul>
+<li><b>Read the Room</b> — When you enter a dance club, court, or prom scene, ask two questions about who wants what from whom; the GM answers honestly.</li>
+<li><b>Never Miss a Step</b> — Accepting a hitch complication in a social scene grants an extra Charm glitter die.</li>
+<li><b>Grand Entrance</b> — Arriving mid-scene creates an <span class="die"><span class="sym">⑧</span></span> asset describing the impression you make.</li>
+</ul>
+</div>
+
+<div class="sidebar">
+<h4>Why unrated</h4>
+<p>Careers matter without adding another die to every pool. Your <span class="die"><span class="sym">⑧</span></span>s stay where the drama is — Values, signs, Relationships — and your career changes what those dice can accomplish. A Raider doesn&rsquo;t roll bigger; she rolls <i>elsewhere</i>.</p>
+</div>
+
+<div class="pagebreak"></div>
+
+<div class="card">
+<h4>Witch</h4>
+<div class="tags">Rot-magic · The coven below</div>
+<p>The coven below the frost raised you. What rots, you rule.</p>
+<ul>
+<li><b>Rot Speaks</b> — Your Rotwork branches carry the Rot tag; when it matches a prince&rsquo;s <i>Undone by</i> tag, step up the effect die against him.</li>
+<li><b>Feed the Rot</b> — Once per scene, include a Glitter-touched (Festering) complication as if it were an asset.</li>
+<li><b>Glyph-Scarred</b> — Begin with two Rotwork branches, one at <span class="die"><span class="sym">⑧</span></span> and one at <span class="die"><span class="sym">⑥</span></span>. The scars were the lessons.</li>
+</ul>
+</div>
+
+<div class="card">
+<h4>Blade</h4>
+<div class="tags">Duels · Bodyguarding</div>
+<p>Duels at dawn, bodyguarding after dark. The Mercenaries at Makeout Forge taught you the price of everything, and you charge it.</p>
+<ul>
+<li><b>Duelist</b> — Step up the effect die in an accepted formal duel.</li>
+<li><b>Bodyguard</b> — Spend a glitter die to take a complication intended for an ally.</li>
+<li><b>Ending Conversations</b> — When you enter an ongoing contest, step up your first action&rsquo;s effect die.</li>
+</ul>
+</div>
+
+<h2>Choosing talents</h2>
+
+<p>At creation, take your career talent plus one free talent — a second profession, a reputation, a knack the prom taught you. Examples: <i>Prom Royalty</i>, <i>Mines Crew</i>, <i>Knows the DJ</i>. New talents open through Milestones (5 XP), the way the book already unlocks SFX.</p>
+
+<div class="sheetfrag">
+<div class="seclbl">Talents (fragment)</div>
+<div class="srow"><span class="lbl">Talents</span> — <i>Raider</i> (Take the Shaft, Glimmōr Native, Sledgehammer Exit) · <i>Knows the DJ</i></div>
+<div class="hint">unrated — permission and SFX, never a die.</div>
+</div>
+
+<div class="sidebar">
+<h4>Talents vs. Distinctions</h4>
+<p>If the table wants careers <i>felt</i> but not <i>rolled</i>, this is the vehicle. Nothing about the dice changes; everything about what they mean does.</p>
+</div></div><div class="titlepage"><div class="topplate">OPTION C</div><div class="toptitle">Magic as Ability Lists</div><p class="topdesc">Cryomancy and Rotwork, branch by branch</p><div class="glitterdiv">✦&nbsp;&nbsp;<span class="r">❄</span>&nbsp;&nbsp;✦</div></div><div class="mockupbody"><div class="optlabel">Option C · Magic as Ability Lists</div>
+
+<h2>Cryomancy</h2>
+
+<p>Cryomancy is an Ability List: each branch is a rated trait with a descriptor tag, effect tags, its own Limit, and unlockable SFX. Begin with <b>two branches</b> — one at <span class="die"><span class="sym">⑧</span></span>, one at <span class="die"><span class="sym">⑥</span></span> — each with one SFX free. New branches open through play (teachers, glyphs); further SFX unlock as the branch grows (<span class="die"><span class="sym">⑧</span></span>, then <span class="die"><span class="sym">⑫</span></span>).</p>
+
+<div class="card">
+<h4>Heartfrost <span class="die"><span class="sym">⑧</span></span>/<span class="die"><span class="sym">⑥</span></span></h4>
+<div class="tags">Attack, Control · Ice</div>
+<p>Weaponize emotional cold.</p>
+<p><span class="limit"><b>Limit:</b> Cannot harm someone against whom you hold no grudge.</span></p>
+<p><span class="sfx"><b>Shatter:</b> Spend a glitter die; step up the effect die on a Heartbreak-marked foe.</span></p>
+</div>
+
+<div class="card">
+<h4>Glassveil <span class="die"><span class="sym">⑧</span></span>/<span class="die"><span class="sym">⑥</span></span></h4>
+<div class="tags">Defense · Charm</div>
+<p>Mirror-ice armor against blades and scrutiny.</p>
+<p><span class="limit"><b>Limit:</b> While the veil is active, your Glamour complications step up.</span></p>
+<p><span class="sfx"><b>Reflect:</b> Spend a glitter die: the attacker's effect die hits them as a complication.</span></p>
+</div>
+
+<div class="card">
+<h4>Snowblind <span class="die"><span class="sym">⑧</span></span>/<span class="die"><span class="sym">⑥</span></span></h4>
+<div class="tags">Sensory · Ice</div>
+<p>Read the memories carried by snow.</p>
+<p><span class="limit"><b>Limit:</b> Visions arrive as weather, not words.</span></p>
+<p><span class="sfx"><b>Whiteout Memory:</b> Spend a glitter die; ask the storm about this place's past.</span></p>
+</div>
+
+<div class="card">
+<h4>Deepdrift <span class="die"><span class="sym">⑧</span></span>/<span class="die"><span class="sym">⑥</span></span></h4>
+<div class="tags">Movement · Ice</div>
+<p>Travel through snow and whiteouts.</p>
+<p><span class="limit"><b>Limit:</b> Cannot arrive anywhere warmer than the departure point.</span></p>
+<p><span class="sfx"><b>Cut Across:</b> Spend a glitter die; arrive mid-scene with an <span class="die"><span class="sym">⑧</span></span> <i>Out of Nowhere</i>.</span></p>
+</div>
+
+<div class="card">
+<h4>Glint <span class="die"><span class="sym">⑧</span></span>/<span class="die"><span class="sym">⑥</span></span></h4>
+<div class="tags">Enhancement · Charm</div>
+<p>Lend an ally supernatural shine.</p>
+<p><span class="limit"><b>Limit:</b> The target's next failure becomes your social responsibility.</span></p>
+<p><span class="sfx"><b>Starlight Loan:</b> Step down Glint for the scene to step up an ally's Glamour die.</span></p>
+</div>
+
+<div class="sidebar">
+<h4>Tags do the talking</h4>
+<p>Ice and Charm are descriptor tags; Attack, Defense, Sensory, Movement, Enhancement are effect tags. Tags unlock SFX and feed prince vulnerabilities — match a prince's <i>Undone by</i> tag and the fiction turns in your favor.</p>
+</div>
+
+<div class="pagebreak"></div>
+
+<h2>Rotwork</h2>
+
+<p>The forbidden twin. <b>Thaw</b> lives here now — it was always Rot-tagged. A witch begins with <b>two Rotwork branches</b>, one at <span class="die"><span class="sym">⑧</span></span> and one at <span class="die"><span class="sym">⑥</span></span>. Everything else works exactly like Cryomancy: teachers, glyphs, growth, SFX at <span class="die"><span class="sym">⑧</span></span> and <span class="die"><span class="sym">⑫</span></span>.</p>
+
+<div class="card">
+<h4>Thaw <span class="die"><span class="sym">⑧</span></span>/<span class="die"><span class="sym">⑥</span></span></h4>
+<div class="tags">Control · Rot</div>
+<p>Melts, mends, and ends enchantments. The spring the frost fears.</p>
+<p><span class="limit"><b>Limit:</b> Growing Dread — both 1s and 2s hitch.</span></p>
+<p><span class="sfx"><b>Spring's Price:</b> Spend a glitter die to step down a complication by two steps instead of one on a recovery test.</span></p>
+</div>
+
+<div class="card">
+<h4>Fester <span class="die"><span class="sym">⑧</span></span>/<span class="die"><span class="sym">⑥</span></span></h4>
+<div class="tags">Attack · Rot</div>
+<p>Accelerate rot in wounds, grudges, and reputations.</p>
+<p><span class="limit"><b>Limit:</b> Indiscriminate — on a hitch, the rot spreads to something you value; the GM says what.</span></p>
+<p><span class="sfx"><b>Feed the Wound:</b> Spend a glitter die to step up the effect die against someone suffering a Rot-tagged complication.</span></p>
+</div>
+
+<div class="card">
+<h4>Wither <span class="die"><span class="sym">⑧</span></span>/<span class="die"><span class="sym">⑥</span></span></h4>
+<div class="tags">Control · Rot</div>
+<p>Sap warmth, strength, and color; leave the target diminished.</p>
+<p><span class="limit"><b>Limit:</b> Requires touch — or a sympathetic token freely given. Stolen tokens don't count.</span></p>
+<p><span class="sfx"><b>Long Winter:</b> Spend a glitter die to make a Wither complication persist one extra scene.</span></p>
+</div>
+
+<div class="card">
+<h4>Hex <span class="die"><span class="sym">⑧</span></span>/<span class="die"><span class="sym">⑥</span></span></h4>
+<div class="tags">Sensory · Rot</div>
+<p>Read the curses, debts, and secret shames that rot carries.</p>
+<p><span class="limit"><b>Limit:</b> Visions arrive as accusations — you see yourself in every reading.</span></p>
+<p><span class="sfx"><b>Name It:</b> Spend a glitter die to ask one question about a curse, debt, or hidden rot in the scene; the GM answers honestly.</span></p>
+</div>
+
+<div class="sidebar">
+<h4>Workings, not spell lists</h4>
+<p>Anything bigger than one branch — thawing Frostgate, marrying the Blizzard — is a Challenge or Timed Test, not a bigger spell. Glyph discoveries and teachers are fiction; growth is mechanical. The storm doesn't care about your character sheet.</p>
+</div>
+
+<div class="glitterdiv"><span class="r">✦</span> ❄ <span class="r">✦</span></div></div><div class="titlepage"><div class="topplate">OPTION E</div><div class="toptitle">Magic as Power Sets</div><p class="topdesc">Two rated sets, set-wide SFX and Limits · hybrids rewarded</p><div class="glitterdiv">✦&nbsp;&nbsp;<span class="r">❄</span>&nbsp;&nbsp;✦</div></div><div class="mockupbody"><div class="optlabel">Option E · Magic as Power Sets</div>
+
+<h2>Cryomancy</h2>
+
+<p>The heroic treatment. A Power Set is a rated suite — each power rolls like a trait — bound by at least one SFX and one Limit that govern the whole set. A gifted character takes the Cryomancy set with <b>two powers</b>, one at <span class="die"><span class="sym">⑧</span></span> and one at <span class="die"><span class="sym">⑥</span></span>, and grows them by die steps through play.</p>
+
+<table class="spec">
+<tr><th colspan="3">The Cryomancy set</th></tr>
+<tr><th>Power</th><th>Tags</th><th>Starts at</th></tr>
+<tr><td>Heartfrost</td><td>Attack · Ice</td><td><span class="die"><span class="sym">⑧</span></span></td></tr>
+<tr><td>Glassveil</td><td>Defense · Charm</td><td><span class="die"><span class="sym">⑧</span></span></td></tr>
+<tr><td>Snowblind</td><td>Sensory · Ice</td><td><span class="die"><span class="sym">⑥</span></span></td></tr>
+<tr><td>Deepdrift</td><td>Movement · Ice</td><td><span class="die"><span class="sym">⑥</span></span></td></tr>
+<tr><td>Glint</td><td>Enhancement · Charm</td><td><span class="die"><span class="sym">⑥</span></span></td></tr>
+</table>
+<p style="font-size:7.5pt;font-style:italic;color:#5a748c;margin-top:-2pt;">Begin with two powers; the rest open through teachers, glyphs, and Milestones.</p>
+
+<div class="card">
+<h4>Set SFX — Shatter</h4>
+<p><span class="sfx">Spend a glitter die to step up the effect die against someone suffering a Heartbreak complication.</span> Usable with any Cryomancy power.</p>
+</div>
+
+<div class="card">
+<h4>Set Limit — The Cold Takes</h4>
+<p><span class="limit">Whenever you include a Cryomancy power in a pool where the stakes are love or warmth, step up the Blizzard of Heartbreak after the roll.</span> The frost always collects.</p>
+</div>
+
+<div class="sidebar">
+<h4>Why sets, plural</h4>
+<p>The Codex lets a character include one power from <i>each</i> of their sets in the same pool at no extra cost. Take both sets and the hybrid — the witch who learned the cold, the cryomancer who touched rot — rolls deeper than the purist. The mechanics reward the story Girlville wants to tell.</p>
+</div>
+
+<div class="glitterdiv"><span class="r">✦</span> ❄ <span class="r">✦</span></div>
+
+<div class="pagebreak"></div>
+
+<h2>Rotwork</h2>
+
+<p>The second set. Witches begin with Rotwork — two powers, one at <span class="die"><span class="sym">⑧</span></span> and one at <span class="die"><span class="sym">⑥</span></span> — and may earn Cryomancy through play, and vice versa. Crossing over is a Milestone, and it should cost something.</p>
+
+<table class="spec">
+<tr><th colspan="3">The Rotwork set</th></tr>
+<tr><th>Power</th><th>Tags</th><th>Starts at</th></tr>
+<tr><td>Thaw</td><td>Control · Rot</td><td><span class="die"><span class="sym">⑧</span></span></td></tr>
+<tr><td>Fester</td><td>Attack · Rot</td><td><span class="die"><span class="sym">⑥</span></span></td></tr>
+<tr><td>Wither</td><td>Control · Rot</td><td><span class="die"><span class="sym">⑥</span></span></td></tr>
+<tr><td>Hex</td><td>Sensory · Rot</td><td><span class="die"><span class="sym">⑥</span></span></td></tr>
+</table>
+<p style="font-size:7.5pt;font-style:italic;color:#5a748c;margin-top:-2pt;">Thaw lives here now — it was always Rot-tagged.</p>
+
+<div class="card">
+<h4>Set SFX — Feed the Wound</h4>
+<p><span class="sfx">Spend a glitter die to step up the effect die against someone suffering a Rot-tagged complication.</span></p>
+</div>
+
+<div class="card">
+<h4>Set Limit — The Rot Spreads</h4>
+<p><span class="limit">On a hitch, the rot touches something you love. The GM says what, and it&rsquo;s never convenient.</span></p>
+</div>
+
+<div class="sidebar">
+<h4>The purist and the hybrid</h4>
+<p>One set is a complete magical education. Two sets is a campaign arc. The book prices the crossing like it matters — because in Glamwendia, it does.</p>
+</div>
+
+<div class="glitterdiv"><span class="r">✦</span> ❄ <span class="r">✦</span></div></div><div class="titlepage"><div class="topplate">OPTION F</div><div class="toptitle">Magic as a Signature Asset</div><p class="topdesc">One trait, six facets, one ladder</p><div class="glitterdiv">✦&nbsp;&nbsp;<span class="r">❄</span>&nbsp;&nbsp;✦</div></div><div class="mockupbody"><div class="optlabel">Option F · Magic as a Signature Asset</div>
+
+<h2>The Gift</h2>
+
+<p>One rated trait does all the work. A gifted character takes <b>Cryomancy</b> as a signature asset at <span class="die"><span class="sym">⑥</span></span>. Its six facets are narrative permissions, not separate traits — name the facet you're working each time you roll the asset. The asset steps up with growth (<span class="die"><span class="sym">⑥</span></span> → <span class="die"><span class="sym">⑧</span></span> → <span class="die"><span class="sym">⑩</span></span> → <span class="die"><span class="sym">⑫</span></span>) and earns SFX along the way: <i>Shatter</i> at <span class="die"><span class="sym">⑧</span></span>, <i>Reflect</i> at <span class="die"><span class="sym">⑩</span></span>.</p>
+
+<table class="spec">
+<tr><th>Facet</th><th>What it lets the asset do</th></tr>
+<tr><td><b>Heartfrost</b></td><td>Turn grudges into blades; attack with emotional cold.</td></tr>
+<tr><td><b>Glassveil</b></td><td>Mirror-ice armor against blades and scrutiny.</td></tr>
+<tr><td><b>Snowblind</b></td><td>Read the memories carried by snow.</td></tr>
+<tr><td><b>Deepdrift</b></td><td>Travel through snow and whiteouts; arrive out of nowhere.</td></tr>
+<tr><td><b>Glint</b></td><td>Lend an ally supernatural shine.</td></tr>
+<tr><td><b>Thaw</b></td><td>Melt, mend, and end enchantments — the Rot-tagged exception.</td></tr>
+</table>
+
+<div class="sheetfrag">
+<div class="seclbl">Asset (fragment)</div>
+<div class="srow"><span class="lbl">Cryomancy</span> <span class="die"><span class="sym">⑧</span></span> — facets: <i>Heartfrost, Glassveil</i> · SFX: <i>Shatter</i></div>
+<div class="hint">Name a facet each time you roll the asset.</div>
+</div>
+
+<div class="sidebar">
+<h4>The leanest rated magic</h4>
+<p>One line on the sheet, one ladder to climb. Facets never roll on their own; they say what the asset's die is allowed to mean. If the table wants magic <i>present</i> but not <i>sprawling</i>, this is the vehicle.</p>
+</div>
+
+<div class="glitterdiv"><span class="r">✦</span> ❄ <span class="r">✦</span></div></div><div class="titlepage"><div class="topplate">OPTION G</div><div class="toptitle">Magic as Gear</div><p class="topdesc">Glyph-regalia · one shared Limit</p><div class="glitterdiv">✦&nbsp;&nbsp;<span class="r">❄</span>&nbsp;&nbsp;✦</div></div><div class="mockupbody"><div class="optlabel">Option G · Magic as Gear</div>
+
+<h2>Glyph-Regalia</h2>
+
+<p>Branch glyphs are inscribed in jewelry and prom regalia. Each piece is gear carrying one branch — roll its die when the fiction fits. A single Limit binds them all.</p>
+
+<div class="card">
+<h4>Heartfrost signet ring — <span class="die"><span class="sym">⑧</span></span></h4>
+<div class="tags">Attack · Ice</div>
+<p>The grudge you wear on your hand.</p>
+</div>
+
+<div class="card">
+<h4>Glassveil mirror-clutch — <span class="die"><span class="sym">⑧</span></span></h4>
+<div class="tags">Defense · Charm</div>
+<p>Carried everywhere; while open, your Glamour complications step up.</p>
+</div>
+
+<div class="card">
+<h4>Snowblind snow-globe locket — <span class="die"><span class="sym">⑥</span></span></h4>
+<div class="tags">Sensory · Ice</div>
+<p>Shake it, and ask the storm.</p>
+</div>
+
+<div class="card">
+<h4>Deepdrift ice-skate charms — <span class="die"><span class="sym">⑥</span></span></h4>
+<div class="tags">Movement · Ice</div>
+<p>Only through snow — never anywhere warmer.</p>
+</div>
+
+<div class="card">
+<h4>Glint tiara — <span class="die"><span class="sym">⑥</span></span></h4>
+<div class="tags">Enhancement · Charm</div>
+<p>Borrowed light, borrowed blame.</p>
+</div>
+
+<div class="card">
+<h4>Thaw thaw-water vial — <span class="die"><span class="sym">⑥</span></span></h4>
+<div class="tags">Control · Rot</div>
+<p>One sip of spring. Growing Dread: 1s and 2s hitch.</p>
+</div>
+
+<div class="card">
+<h4>Shared Limit — Stripped</h4>
+<p><span class="limit">Regalia can be lost, stolen, damaged, or broken. Without the piece, the branch is gone until it's recovered or remade.</span> The prom is a dangerous place for jewelry.</p>
+</div>
+
+<div class="sidebar">
+<h4>The disarm scene</h4>
+<p>Being stripped of your regalia before the Winter Prom is a Girlville classic. Gear magic makes that scene mechanical — the fiction does the balancing, no point costs required.</p>
+</div></div><div class="titlepage"><div class="topplate">OPTION K</div><div class="toptitle">Magic as Resources</div><p class="topdesc">Winter's Favor <span class="die"><span class="sym">⑥</span></span><span class="die"><span class="sym">⑥</span></span><span class="die"><span class="sym">⑥</span></span> — a session fuel budget</p><div class="glitterdiv">✦&nbsp;&nbsp;<span class="r">❄</span>&nbsp;&nbsp;✦</div></div><div class="mockupbody"><div class="optlabel">Option K · Magic as Resources</div>
+
+<h2>Winter&rsquo;s Favor</h2>
+
+<p>Magic as fuel, not a trait. Each session begins with <b>Winter&rsquo;s Favor <span class="die"><span class="sym">⑥⑥⑥</span></span></b> — the storm&rsquo;s attention, measured out. When you work magic, commit any number of Favor dice: roll them separately, add the highest to your total. Committed dice are spent — they return at downtime, after a proper grooming montage, or when you feed the Blizzard.</p>
+
+<h3>What workings look like</h3>
+
+<p>The six familiar workings, one line each. No ratings; the Favor dice are the ratings:</p>
+
+<ul>
+<li><b>Heartfrost</b> — attack with emotional cold.</li>
+<li><b>Glassveil</b> — ward yourself in mirror-ice.</li>
+<li><b>Snowblind</b> — read the memories in the snow.</li>
+<li><b>Deepdrift</b> — cross impossible winter distances.</li>
+<li><b>Glint</b> — lend an ally supernatural shine.</li>
+<li><b>Thaw</b> — melt, mend, end enchantments. <i>Rot-tagged:</i> committing Favor to Thaw steps up the Blizzard of Heartbreak after the roll.</li>
+</ul>
+
+<div class="sidebar">
+<h4>Feed the Blizzard</h4>
+<p>Step up or double a Favor die before you roll it. If the working fails, the Blizzard of Heartbreak steps up instead — or an extra die joins it. The storm remembers who fed it.</p>
+</div>
+
+<div class="glitterdiv"><span class="r">✦</span> ❄ <span class="r">✦</span></div>
+
+<p class="closer" style="font-size: 8pt;">Magic becomes a budget. Spend early and often, or hoard it all for the prom.</p></div><div class="titlepage"><div class="topplate">OPTION L</div><div class="toptitle">Magic as Narrative Permission</div><p class="topdesc">No rated magic · no spells, only glitter</p><div class="glitterdiv">✦&nbsp;&nbsp;<span class="r">❄</span>&nbsp;&nbsp;✦</div></div><div class="mockupbody"><div class="optlabel">Option L · Magic as Narrative Permission</div>
+
+<h2>No Spells, Only Glitter</h2>
+
+<p>The leanest magic. No rated branches, no lists, no fuel. If the fiction says you can work ice — you&rsquo;re a high winter elf at the Winter Prom; of course you can — you roll what you&rsquo;d roll for anything: a Value, a sign, a Relationship, an asset. The <b>effect die</b> says what the magic does. Complications carry the weirdness: <i>Frostbitten <span class="die"><span class="sym">⑧</span></span></i>, <i>Snow-Blind <span class="die"><span class="sym">⑥</span></span></i>, <i>Owing the Storm <span class="die"><span class="sym">⑩</span></span></i>.</p>
+
+<div class="epigraph">
+<p>The standing precedent: the Snowflake sign&rsquo;s Edit SFX already works ice magic this way. This option simply declines to build anything bigger on top of it.</p>
+</div>
+
+<h3>Adjudicating a working</h3>
+
+<ul>
+<li>Set the stakes first: what does the magic cost if it fails?</li>
+<li>Opposition is the Doom Pool, a Challenge pool, or a named GMC — never the weather as a character.</li>
+<li>Let the effect die do the talking: <span class="die"><span class="sym">⑫</span></span> reshapes the scene; <span class="die"><span class="sym">④</span></span> barely frosts the glass.</li>
+<li>Anything bigger than a scene — thawing Frostgate, marrying the Blizzard — is a Challenge or Timed Test.</li>
+</ul>
+
+<div class="sidebar">
+<h4>What you trade away</h4>
+<p>No collectible branches, no rated growth, no glyph-hunting campaign. What you keep: nothing new to learn, and magic stays inside the interpersonal drama where Girlville lives. The storm is a metaphor that occasionally freezes people.</p>
+</div>
+
+<div class="glitterdiv"><span class="r">✦</span> ❄ <span class="r">✦</span></div></div></body></html>
