@@ -208,12 +208,16 @@ jobs:
           /tmp/butler/butler -V
 
       - name: Publish PDFs to itch.io
-        if: ${{ vars.ITCH_TARGET != '' && secrets.BUTLER_API_KEY != '' }}
+        if: ${{ vars.ITCH_TARGET != '' }}
         env:
           BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
           ITCH_TARGET: ${{ vars.ITCH_TARGET }}
           RELEASE_TAG: v${{ steps.semver.outputs.version }}
         run: |
+          if [ -z "$BUTLER_API_KEY" ]; then
+            echo "BUTLER_API_KEY not configured; skipping itch.io publish."
+            exit 0
+          fi
           mkdir -p /tmp/itch/reading /tmp/itch/print
           cp dist/girlville-halfletter.pdf /tmp/itch/reading/
           cp dist/girlville-signatures.pdf /tmp/itch/print/
